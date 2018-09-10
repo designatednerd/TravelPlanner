@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bus" representedClassName="Bus" parentEntity="Plan" syncable="YES" codeGenerationType="class">
+        <attribute name="carrier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Flight" representedClassName="Flight" parentEntity="Plan" syncable="YES" codeGenerationType="class">
+        <attribute name="airline" attributeType="String" syncable="YES"/>
+        <attribute name="destinationAirport" attributeType="String" syncable="YES"/>
+        <attribute name="flightNumber" attributeType="String" syncable="YES"/>
+        <attribute name="originAirport" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Hotel" representedClassName="Hotel" parentEntity="Plan" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stateOrProvince" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Plan" representedClassName="Plan" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="plans" inverseEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Train" representedClassName="Train" parentEntity="Plan" syncable="YES" codeGenerationType="class">
+        <attribute name="arrivalTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="plans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="trip" inverseEntity="Plan" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Trip" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Flight" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="Train" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Bus" positionX="-18" positionY="27" width="128" height="90"/>
+        <element name="Hotel" positionX="0" positionY="45" width="128" height="120"/>
+        <element name="Plan" positionX="9" positionY="126" width="128" height="90"/>
+    </elements>
+</model>

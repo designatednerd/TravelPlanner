@@ -1,0 +1,109 @@
+//
+//  TripViewController.swift
+//  TravelPlanner
+//
+//  Created by Ellen Shapiro (Work) on 9/10/18.
+//  Copyright © 2018 Designated Nerd Software. All rights reserved.
+//
+
+import SharedFramework
+import UIKit
+
+class TripDetailViewController: UIViewController {
+
+    weak var coordinator: TripCoordinator?
+    var trip: Trip! {
+        didSet {
+            self.title = self.trip.name
+        }
+    }
+
+    @IBOutlet weak var tableView: UITableView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        FlightInfoCell.register(in: self.tableView)
+
+        self.navigationItem.rightBarButtonItems = [
+                UIBarButtonItem(barButtonSystemItem: .edit,
+                                target: self,
+                                action: #selector(editTrip)),
+                UIBarButtonItem(barButtonSystemItem: .add,
+                                target: self,
+                                action: #selector(addPlan))
+            ]
+    }
+
+    @objc private func addPlan() {
+        let alertController = UIAlertController(title: "What kind of plan would you like to add?", message: nil, preferredStyle: .actionSheet)
+
+        alertController.addAction(UIAlertAction(title: "Bus", style: .default, handler: { _ in
+            self.coordinator?.addPlanToTrip(Bus.self, to: self.trip)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Flight", style: .default, handler: { _ in
+            self.coordinator?.addPlanToTrip(Flight.self, to: self.trip)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Hotel", style: .default, handler: { _ in
+            self.coordinator?.addPlanToTrip(Hotel.self, to: self.trip)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Train", style: .default, handler: { _ in
+            self.coordinator?.addPlanToTrip(Train.self, to: self.trip)
+        }))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    @objc private func editTrip() {
+        self.coordinator?.editTrip(self.trip)
+    }
+}
+
+extension TripDetailViewController: StoryboardHosted { }
+
+extension TripDetailViewController: UITableViewDataSource {
+
+    enum TripDetailSection: Int, CaseIterable {
+        case tripInfo
+        case plans
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TripDetailSection.allCases.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch TripDetailSection.forIndex(section) {
+        case .tripInfo:
+            return 1
+        case .plans:
+            return self.trip.planCount
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch TripDetailSection.forSection(in: indexPath) {
+        case .tripInfo:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TripInfoCell.identifier) as! TripInfoCell
+            cell.configure(for: self.trip)
+            return cell
+        case .plans:
+            let plan = self.trip.plansByDate[indexPath.row]
+
+            if let flight = plan as? Flight {
+               return FlightInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: flight)
+            } else if let bus = plan as? Bus {
+                return BusInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: bus)
+            } else if let hotel = plan as? Hotel {
+                return HotelInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: hotel)
+            } else if let train = plan as? Train {
+                return TrainInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: train)
+            } else {
+                fatalError("Unhandled plan type: \(type(of: plan))")
+            }
+        }
+    }
+}
