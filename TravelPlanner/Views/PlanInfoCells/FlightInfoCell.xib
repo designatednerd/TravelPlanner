@@ -10,15 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightInfoCell" rowHeight="175" id="BXD-Rb-3pg" customClass="FlightInfoCell" customModule="TravelPlanner" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="409" height="175"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightInfoCell" rowHeight="199" id="BXD-Rb-3pg" customClass="FlightInfoCell" customModule="TravelPlanner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="199"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BXD-Rb-3pg" id="WE7-XI-GZX">
-                <rect key="frame" x="0.0" y="0.0" width="409" height="174.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="409" height="198.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-uU-rp8">
-                        <rect key="frame" x="20" y="11" width="369" height="153"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-uU-rp8">
+                        <rect key="frame" x="20" y="11" width="369" height="177"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Airline Flight Number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52G-Bb-XZC">
                                 <rect key="frame" x="0.0" y="0.0" width="369" height="20.5"/>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="3mA-fM-L0Q">
-                                <rect key="frame" x="0.0" y="24.5" width="369" height="20.5"/>
+                                <rect key="frame" x="0.0" y="28.5" width="369" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-Pi-q1q">
                                         <rect key="frame" x="0.0" y="0.0" width="119.5" height="20.5"/>
@@ -44,7 +44,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fUE-9e-jOM">
-                                <rect key="frame" x="0.0" y="49" width="369" height="20.5"/>
+                                <rect key="frame" x="0.0" y="57" width="369" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departs Airport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTO-Tk-v7r">
                                         <rect key="frame" x="0.0" y="0.0" width="118.5" height="20.5"/>
@@ -61,13 +61,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70N-fc-mZ9">
-                                <rect key="frame" x="0.0" y="73.5" width="369" height="30.5"/>
+                                <rect key="frame" x="0.0" y="85.5" width="369" height="34.5"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cFG-zf-FoW">
-                                <rect key="frame" x="0.0" y="108" width="369" height="20.5"/>
+                                <rect key="frame" x="0.0" y="128" width="369" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrival Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUN-EP-I1D">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="20.5"/>
@@ -84,7 +84,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-Y0-vjL">
-                                <rect key="frame" x="0.0" y="132.5" width="369" height="20.5"/>
+                                <rect key="frame" x="0.0" y="156.5" width="369" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrives Airport " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbV-vg-bQM">
                                         <rect key="frame" x="0.0" y="0.0" width="115.5" height="20.5"/>
@@ -110,7 +110,17 @@
                     <constraint firstAttribute="trailingMargin" secondItem="Fja-uU-rp8" secondAttribute="trailing" id="akZ-yA-MLq"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-12" y="88.605697151424295"/>
+            <connections>
+                <outlet property="airlineFlightLabel" destination="52G-Bb-XZC" id="tP0-F3-4dC"/>
+                <outlet property="arrivalAirportLabel" destination="CbV-vg-bQM" id="dU4-fb-ObV"/>
+                <outlet property="arrivalDateLabel" destination="IZi-bA-VVb" id="WQT-aX-utO"/>
+                <outlet property="arrivalTimeLabel" destination="myD-31-Xsm" id="Tti-aK-buM"/>
+                <outlet property="departureAirportLabel" destination="dTO-Tk-v7r" id="LHD-GO-1pa"/>
+                <outlet property="departureDateLabel" destination="MrK-cH-KCu" id="5bE-2L-230"/>
+                <outlet property="departureTimeLabel" destination="aZV-8T-3Be" id="zOb-cp-1lH"/>
+                <outlet property="durationLabel" destination="70N-fc-mZ9" id="L1e-lp-sKN"/>
+            </connections>
+            <point key="canvasLocation" x="-12" y="99.400299850074973"/>
         </tableViewCell>
     </objects>
 </document>

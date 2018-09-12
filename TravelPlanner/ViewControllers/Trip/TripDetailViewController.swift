@@ -34,6 +34,11 @@ class TripDetailViewController: UIViewController {
                                 action: #selector(addPlan))
             ]
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
 
     @objc private func addPlan() {
         let alertController = UIAlertController(title: "What kind of plan would you like to add?", message: nil, preferredStyle: .actionSheet)
@@ -104,6 +109,20 @@ extension TripDetailViewController: UITableViewDataSource {
             } else {
                 fatalError("Unhandled plan type: \(type(of: plan))")
             }
+        }
+    }
+}
+
+extension TripDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch TripDetailSection.forSection(in: indexPath) {
+        case .tripInfo:
+            // Nothing to do here.
+            break
+        case .plans:
+            let plan = self.trip.plansByDate[indexPath.row]
+            self.coordinator?.editPlan(plan)
         }
     }
 }

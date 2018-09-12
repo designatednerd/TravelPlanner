@@ -45,6 +45,17 @@
 		33B2550F214700E100364AE1 /* BusInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B2550E214700E100364AE1 /* BusInfoCell.xib */; };
 		33B255112147011000364AE1 /* HotelInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B255102147011000364AE1 /* HotelInfoCell.xib */; };
 		33B255132147013700364AE1 /* TrainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B255122147013700364AE1 /* TrainInfoCell.xib */; };
+		9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF22148341A0006C217 /* AirlineImporter.swift */; };
+		9B6C1EF9214834B20006C217 /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF7214834B20006C217 /* airlines.csv */; };
+		9B6C1EFA214834B20006C217 /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF8214834B20006C217 /* airports.csv */; };
+		9B6C1EFC2148619D0006C217 /* Airport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */; };
+		9B6C1EFE21486D000006C217 /* FlightCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1EFD21486D000006C217 /* FlightCoordinator.swift */; };
+		9B6C1F042148721A0006C217 /* AirportSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F032148721A0006C217 /* AirportSelectionViewController.swift */; };
+		9B6C1F06214875C10006C217 /* AirlineSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F05214875C10006C217 /* AirlineSelectionViewController.swift */; };
+		9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F072148763B0006C217 /* Airline+Extensions.swift */; };
+		9B6C1F0A214877BD0006C217 /* UITextField+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F09214877BD0006C217 /* UITextField+Validation.swift */; };
+		9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F0B21490D930006C217 /* CSVImporter.swift */; };
+		9B6C1F0E21490EDF0006C217 /* AirportImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +123,17 @@
 		33B2550E214700E100364AE1 /* BusInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusInfoCell.xib; sourceTree = "<group>"; };
 		33B255102147011000364AE1 /* HotelInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelInfoCell.xib; sourceTree = "<group>"; };
 		33B255122147013700364AE1 /* TrainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainInfoCell.xib; sourceTree = "<group>"; };
+		9B6C1EF22148341A0006C217 /* AirlineImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineImporter.swift; sourceTree = "<group>"; };
+		9B6C1EF7214834B20006C217 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
+		9B6C1EF8214834B20006C217 /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
+		9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airport+Extensions.swift"; sourceTree = "<group>"; };
+		9B6C1EFD21486D000006C217 /* FlightCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCoordinator.swift; sourceTree = "<group>"; };
+		9B6C1F032148721A0006C217 /* AirportSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSelectionViewController.swift; sourceTree = "<group>"; };
+		9B6C1F05214875C10006C217 /* AirlineSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSelectionViewController.swift; sourceTree = "<group>"; };
+		9B6C1F072148763B0006C217 /* Airline+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airline+Extensions.swift"; sourceTree = "<group>"; };
+		9B6C1F09214877BD0006C217 /* UITextField+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Validation.swift"; sourceTree = "<group>"; };
+		9B6C1F0B21490D930006C217 /* CSVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImporter.swift; sourceTree = "<group>"; };
+		9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				33B2548F21468A8100364AE1 /* SharedFramework.h */,
+				9B6C1EF6214834B20006C217 /* RawData */,
 				33B254EF2146BB2D00364AE1 /* CoreData */,
 				33B254ED2146BB0800364AE1 /* Extensions */,
 				33B254EE2146BB1F00364AE1 /* Helpers */,
@@ -205,6 +228,8 @@
 				33B254AE214697B700364AE1 /* FlightEditViewController.swift */,
 				33B254AC214697AB00364AE1 /* HotelEditViewController.swift */,
 				33B254AA2146979E00364AE1 /* TrainEditViewController.swift */,
+				9B6C1F05214875C10006C217 /* AirlineSelectionViewController.swift */,
+				9B6C1F032148721A0006C217 /* AirportSelectionViewController.swift */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -223,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				33B254A021468CC700364AE1 /* TripCoordinator.swift */,
+				9B6C1EFD21486D000006C217 /* FlightCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -241,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				33B254B021469B8600364AE1 /* Formatters.swift */,
+				9B6C1F0B21490D930006C217 /* CSVImporter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -251,6 +278,8 @@
 				33B2549A21468ACF00364AE1 /* TravelPlanner.xcdatamodeld */,
 				33B254F02146BB4700364AE1 /* ManagedObjectExtensions */,
 				33B2549E21468B0F00364AE1 /* CoreDataManager.swift */,
+				9B6C1EF22148341A0006C217 /* AirlineImporter.swift */,
+				9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -259,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
+				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
+				9B6C1F072148763B0006C217 /* Airline+Extensions.swift */,
 				33B255062146CF5500364AE1 /* Flight+Extensions.swift */,
 			);
 			path = ManagedObjectExtensions;
@@ -278,6 +309,7 @@
 			children = (
 				33B254F42146C08F00364AE1 /* CaseIterable+TableViewHelping.swift */,
 				33B255082146D67A00364AE1 /* UITableView+Generics.swift */,
+				9B6C1F09214877BD0006C217 /* UITextField+Validation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +337,15 @@
 				33B255122147013700364AE1 /* TrainInfoCell.xib */,
 			);
 			path = PlanInfoCells;
+			sourceTree = "<group>";
+		};
+		9B6C1EF6214834B20006C217 /* RawData */ = {
+			isa = PBXGroup;
+			children = (
+				9B6C1EF7214834B20006C217 /* airlines.csv */,
+				9B6C1EF8214834B20006C217 /* airports.csv */,
+			);
+			path = RawData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +456,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6C1EF9214834B20006C217 /* airlines.csv in Resources */,
+				9B6C1EFA214834B20006C217 /* airports.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +471,7 @@
 				33B254F92146C60600364AE1 /* TripInfoCell.swift in Sources */,
 				33B254A92146978F00364AE1 /* BusEditViewController.swift in Sources */,
 				33B254E32146A96500364AE1 /* StoryboardHosted.swift in Sources */,
+				9B6C1F06214875C10006C217 /* AirlineSelectionViewController.swift in Sources */,
 				33B255092146D67A00364AE1 /* UITableView+Generics.swift in Sources */,
 				33B2547921468A1C00364AE1 /* TripListViewController.swift in Sources */,
 				33B254F52146C08F00364AE1 /* CaseIterable+TableViewHelping.swift in Sources */,
@@ -443,8 +487,11 @@
 				33B254AF214697B700364AE1 /* FlightEditViewController.swift in Sources */,
 				33B254FF2146CB4000364AE1 /* FlightInfoCell.swift in Sources */,
 				33B2547721468A1C00364AE1 /* AppDelegate.swift in Sources */,
+				9B6C1EFE21486D000006C217 /* FlightCoordinator.swift in Sources */,
+				9B6C1F0A214877BD0006C217 /* UITextField+Validation.swift in Sources */,
 				33B254AD214697AB00364AE1 /* HotelEditViewController.swift in Sources */,
 				33B254AB2146979E00364AE1 /* TrainEditViewController.swift in Sources */,
+				9B6C1F042148721A0006C217 /* AirportSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,12 +501,17 @@
 			files = (
 				33B254A521468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift in Sources */,
 				33B2549F21468B0F00364AE1 /* CoreDataManager.swift in Sources */,
+				9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */,
 				33B2549D21468AD700364AE1 /* TravelPlanner.xcdatamodeld in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
 				33B254B221469B8C00364AE1 /* Formatters.swift in Sources */,
+				9B6C1EFC2148619D0006C217 /* Airport+Extensions.swift in Sources */,
 				33B254CD2146A6B500364AE1 /* Trip+Extensions.swift in Sources */,
 				33B254A72146902D00364AE1 /* NSManagedObject+Convenience.swift in Sources */,
+				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
 				33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */,
+				9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */,
+				9B6C1F0E21490EDF0006C217 /* AirportImporter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,8 +47,8 @@ public class Formatters {
 
     public lazy var planDateIntervalFormatter: DateIntervalFormatter = {
         let formatter = DateIntervalFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
 
         return formatter
     }()

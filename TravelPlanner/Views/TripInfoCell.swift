@@ -16,9 +16,9 @@ class TripInfoCell: UITableViewCell {
     @IBOutlet private var endDateLabel: UILabel!
 
     func configure(for trip: Trip) {
-        self.destinationLabel.text = trip.destination
-        self.startDateLabel.text = "Starts: \(trip.formattedStartDate)"
-        self.endDateLabel.text = "Ends: \(trip.formattedEndDate)"
+        self.destinationLabel.text = trip.destination ?? "(Unknown)"
+        self.startDateLabel.text = trip.detailFormattedStartDate
+        self.endDateLabel.text = trip.detailFormattedEndDate
     }
 }
 

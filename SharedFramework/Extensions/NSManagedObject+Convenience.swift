@@ -18,4 +18,8 @@ extension NSManagedObject {
     public static func dns_create(in context: NSManagedObjectContext =  CoreDataManager.shared.mainContext) -> Self {
         return self.init(entity: self.entity(), insertInto: context)
     }
+    
+    public var dns_hasNoPersistedValues: Bool {
+        return self.committedValues(forKeys: nil).isEmpty
+    }
 }

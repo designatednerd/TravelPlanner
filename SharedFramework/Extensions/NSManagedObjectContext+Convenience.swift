@@ -19,8 +19,9 @@ public extension NSManagedObjectContext {
         try self.save()
     }
 
-    public func dns_allOf<T: NSManagedObject>(_ type: T.Type) -> [T] {
+    public func dns_allOf<T: NSManagedObject>(_ type: T.Type, sortDescriptors: [NSSortDescriptor]? = nil) -> [T] {
         let request = T.fetchRequest()
+        request.sortDescriptors = sortDescriptors
         do {
             let result = try self.fetch(request)
             return result as! [T]

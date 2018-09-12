@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Airline" representedClassName="Airline" syncable="YES" codeGenerationType="class">
+        <attribute name="callSign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iataCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icaoCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="flights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="airline" inverseEntity="Flight" syncable="YES"/>
+    </entity>
+    <entity name="Airport" representedClassName="Airport" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iataCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icaoCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeZoneName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="arrivingFlights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="arrivalAirport" inverseEntity="Flight" syncable="YES"/>
+        <relationship name="departingFlights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="departureAirport" inverseEntity="Flight" syncable="YES"/>
+    </entity>
     <entity name="Bus" representedClassName="Bus" parentEntity="Plan" syncable="YES" codeGenerationType="class">
         <attribute name="carrier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Flight" representedClassName="Flight" parentEntity="Plan" syncable="YES" codeGenerationType="class">
-        <attribute name="airline" attributeType="String" syncable="YES"/>
-        <attribute name="destinationAirport" attributeType="String" syncable="YES"/>
         <attribute name="flightNumber" attributeType="String" syncable="YES"/>
-        <attribute name="originAirport" attributeType="String" syncable="YES"/>
+        <relationship name="airline" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airline" inverseName="flights" inverseEntity="Airline" syncable="YES"/>
+        <relationship name="arrivalAirport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="arrivingFlights" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="departureAirport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="departingFlights" inverseEntity="Airport" syncable="YES"/>
     </entity>
     <entity name="Hotel" representedClassName="Hotel" parentEntity="Plan" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,11 +55,13 @@
         <relationship name="plans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="trip" inverseEntity="Plan" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Trip" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Flight" positionX="-54" positionY="-9" width="128" height="105"/>
-        <element name="Train" positionX="-36" positionY="9" width="128" height="75"/>
         <element name="Bus" positionX="-18" positionY="27" width="128" height="90"/>
+        <element name="Flight" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="Hotel" positionX="0" positionY="45" width="128" height="120"/>
         <element name="Plan" positionX="9" positionY="126" width="128" height="90"/>
+        <element name="Train" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Trip" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Airline" positionX="-27" positionY="81" width="128" height="150"/>
+        <element name="Airport" positionX="-18" positionY="90" width="128" height="180"/>
     </elements>
 </model>

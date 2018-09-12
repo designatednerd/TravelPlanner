@@ -18,6 +18,14 @@ public extension Trip {
 
         return Formatters.shared.tripDateFormatter.string(from: date)
     }
+    
+    public var detailFormattedStartDate: String {
+        guard let date = self.startDate else {
+            return "(Unknown)"
+        }
+        
+        return Formatters.shared.planDateFormatter.string(from: date)
+    }
 
     public var formattedEndDate: String {
         guard let date = self.endDate else {
@@ -25,6 +33,14 @@ public extension Trip {
         }
 
         return Formatters.shared.tripDateFormatter.string(from: date)
+    }
+    
+    public var detailFormattedEndDate: String {
+        guard let date = self.endDate else {
+            return "(Unknown)"
+        }
+        
+        return Formatters.shared.planDateFormatter.string(from: date)
     }
 
     public var formattedTripInterval: String {

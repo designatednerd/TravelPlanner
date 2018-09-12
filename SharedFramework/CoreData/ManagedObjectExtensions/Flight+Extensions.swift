@@ -11,7 +11,7 @@ import Foundation
 public extension Flight {
 
     public var flightDescription: String {
-        return "\(self.airline!) flight \(self.flightNumber!)"
+        return "\(self.airline!.name!) flight \(self.flightNumber!)"
     }
 
     public var formattedTakeoffDate: String {
@@ -31,6 +31,12 @@ public extension Flight {
     }
 
     public var formattedDuration: String {
-        return "✈️ \(Formatters.shared.planDateIntervalFormatter.string(from: self.startDate!, to: self.endDate!))"
+        let dateComponents = Calendar.current.dateComponents([.hour, .minute], from: self.startDate!, to: self.endDate!)
+        guard let hours = dateComponents.hour,
+            let minutes = dateComponents.minute else {
+                return "(Unknown Duration)"
+        }
+        
+        return "✈️ \(hours)h \(minutes)m"
     }
 }

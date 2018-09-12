@@ -19,6 +19,8 @@ class TripCoordinator {
         return navController
     }()
 
+    var flightCoordinator: FlightCoordinator?
+    
     // MARK: - Public actions
 
     func addNewTrip() {
@@ -87,11 +89,8 @@ class TripCoordinator {
     }
 
     private func showFlightEditViewController(for flight: Flight) {
-        let flightEditVC = FlightEditViewController()
-        flightEditVC.coordinator = self
-        flightEditVC.flight = flight
-
-        self.navController.present(flightEditVC, animated: true)
+        self.flightCoordinator = FlightCoordinator(flight: flight)
+        self.navController.present(self.flightCoordinator!.navController, animated: true)
     }
 
     private func showTrainEditViewController(for train: Train) {

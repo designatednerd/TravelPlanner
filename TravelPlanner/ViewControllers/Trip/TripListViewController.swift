@@ -15,6 +15,11 @@ class TripListViewController: UIViewController {
     var trips: [Trip]?
 
     @IBOutlet private var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "My Trips"
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

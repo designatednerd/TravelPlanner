@@ -31,11 +31,11 @@ extension FlightInfoCell: PlanInfoCell {
 
         self.departureDateLabel.text = flight.formattedTakeoffDate
         self.departureTimeLabel.text = flight.formattedTakeoffTime
-        self.departureAirportLabel.text = flight.originAirport
+        self.departureAirportLabel.text = flight.departureAirport?.displayName
 
         self.arrivalDateLabel.text = flight.formattedLandingDate
         self.arrivalTimeLabel.text = flight.formattedLandingTime
-        self.arrivalAirportLabel.text = flight.destinationAirport
+        self.arrivalAirportLabel.text = flight.arrivalAirport?.displayName
 
         self.durationLabel.text = flight.formattedDuration
     }
