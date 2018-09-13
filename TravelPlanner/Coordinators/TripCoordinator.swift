@@ -6,6 +6,7 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
+import Intents
 import UIKit
 import SharedFramework
 
@@ -26,7 +27,7 @@ class TripCoordinator {
     func addNewTrip() {
         let trip = Trip.dns_create()
 
-        self.showTripEditViewController(with: trip)
+        self.showTripEditViewController(with: trip)        
     }
 
     func viewTrip(_ trip: Trip) {
