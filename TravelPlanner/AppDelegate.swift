@@ -52,5 +52,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             assertionFailure("Error importing airports: \(error)")
         }
     }
+    
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard let activityType = UserActivityType(rawValue: userActivity.activityType) else {
+            return false
+        }
+        
+        switch activityType {
+        case .viewTrip:
+            guard
+                let window = self.window,
+                let rootViewController = window.rootViewController as? UINavigationController else {
+                    debugPrint("Couldn't get root VC")
+                    return false
+            }
+            
+            // See `restoreUserActivityState` in `TripListViewController`
+            // to follow the continuation of the activity further.
+            restorationHandler(rootViewController.viewControllers)
+            return true
+        }
+    }
 }
 

@@ -27,6 +27,38 @@ class TripListViewController: UIViewController {
         trips = CoreDataManager.shared.mainContext.dns_allOf(Trip.self)
         tableView.reloadData()
     }
+    
+    override func restoreUserActivityState(_ activity: NSUserActivity) {
+        super.restoreUserActivityState(activity)
+        guard let type = UserActivityType(rawValue: activity.activityType) else {
+            return
+        }
+        
+        guard let nav = self.coordinator?.navController else {
+            return
+        }
+        
+        nav.popToRootViewController(animated: false)
+        if nav.presentedViewController != nil {
+            dismiss(animated: false, completion: nil)
+        }
+        
+        switch type {
+        case .viewTrip:
+            guard let tripName = activity.userInfo?[UserActivityInfoKey.trip.rawValue] as? String else {
+                return
+            }
+            
+            let predicate = NSPredicate(format: "%K == %@", "name", tripName)
+            
+            guard let trip = CoreDataManager.shared.mainContext.dns_fetch(Trip.self, with: predicate).first else {
+                return
+            }
+            
+            self.coordinator?.viewTrip(trip)
+        }
+    }
+
 
     @IBAction func addTrip() {
         self.coordinator?.addNewTrip()

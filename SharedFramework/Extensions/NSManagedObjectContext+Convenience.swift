@@ -43,6 +43,18 @@ public extension NSManagedObjectContext {
             return nil
         }
     }
+    
+    public func dns_fetch<T: NSManagedObject>(_ type: T.Type, with predicate: NSPredicate) -> [T] {
+        let request = T.fetchRequest()
+        request.predicate = predicate
+        do {
+            let result = try self.fetch(request)
+            return result as? [T] ?? []
+        } catch let error {
+            debugPrint("Error fetching \(T.dns_entityName) with predicate \(predicate): \(error)")
+            return []
+        }
+    }
 
     public func dns_delete<T: NSManagedObject>(_ type: T.Type, withID id: String) {
         guard let toDelete = self.dns_fetch(type, with: id) else {

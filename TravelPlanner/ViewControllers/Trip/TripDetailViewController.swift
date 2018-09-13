@@ -38,8 +38,15 @@ class TripDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        
+        let userActivity = UserActivityType.viewTrip.create(with: self.trip)
+        
+        self.userActivity = userActivity
+        
+        // ALSO donates, but only if you've set the user activity on the vc
+        userActivity.becomeCurrent()
     }
-
+    
     @objc private func addPlan() {
         let alertController = UIAlertController(title: "What kind of plan would you like to add?", message: nil, preferredStyle: .actionSheet)
 

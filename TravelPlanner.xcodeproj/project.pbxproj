@@ -45,6 +45,10 @@
 		33B2550F214700E100364AE1 /* BusInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B2550E214700E100364AE1 /* BusInfoCell.xib */; };
 		33B255112147011000364AE1 /* HotelInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B255102147011000364AE1 /* HotelInfoCell.xib */; };
 		33B255132147013700364AE1 /* TrainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33B255122147013700364AE1 /* TrainInfoCell.xib */; };
+		9B5887F92149B8FC00A27881 /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5887F82149B8FC00A27881 /* UserActivities.swift */; };
+		9B5887FC2149C6D700A27881 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FB2149C6D700A27881 /* Intents.framework */; };
+		9B5887FE2149C6DD00A27881 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */; };
+		9B5888002149C6E700A27881 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */; };
 		9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF22148341A0006C217 /* AirlineImporter.swift */; };
 		9B6C1EF9214834B20006C217 /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF7214834B20006C217 /* airlines.csv */; };
 		9B6C1EFA214834B20006C217 /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF8214834B20006C217 /* airports.csv */; };
@@ -123,6 +127,10 @@
 		33B2550E214700E100364AE1 /* BusInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusInfoCell.xib; sourceTree = "<group>"; };
 		33B255102147011000364AE1 /* HotelInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelInfoCell.xib; sourceTree = "<group>"; };
 		33B255122147013700364AE1 /* TrainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainInfoCell.xib; sourceTree = "<group>"; };
+		9B5887F82149B8FC00A27881 /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivities.swift; sourceTree = "<group>"; };
+		9B5887FB2149C6D700A27881 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9B6C1EF22148341A0006C217 /* AirlineImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineImporter.swift; sourceTree = "<group>"; };
 		9B6C1EF7214834B20006C217 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
 		9B6C1EF8214834B20006C217 /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
@@ -141,6 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5888002149C6E700A27881 /* MobileCoreServices.framework in Frameworks */,
+				9B5887FE2149C6DD00A27881 /* CoreSpotlight.framework in Frameworks */,
+				9B5887FC2149C6D700A27881 /* Intents.framework in Frameworks */,
 				33B2549421468A8100364AE1 /* SharedFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +172,7 @@
 				33B2547521468A1C00364AE1 /* TravelPlanner */,
 				33B2548E21468A8100364AE1 /* SharedFramework */,
 				33B2547421468A1C00364AE1 /* Products */,
+				9B5887FA2149C6D700A27881 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -177,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				33B2547621468A1C00364AE1 /* AppDelegate.swift */,
+				9B5887F82149B8FC00A27881 /* UserActivities.swift */,
 				33B2547D21468A1E00364AE1 /* Assets.xcassets */,
 				33B254EC2146BAF200364AE1 /* Coordinators */,
 				33B254F62146C09500364AE1 /* Extensions */,
@@ -339,6 +352,16 @@
 			path = PlanInfoCells;
 			sourceTree = "<group>";
 		};
+		9B5887FA2149C6D700A27881 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */,
+				9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */,
+				9B5887FB2149C6D700A27881 /* Intents.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B6C1EF6214834B20006C217 /* RawData */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +499,7 @@
 				33B2547921468A1C00364AE1 /* TripListViewController.swift in Sources */,
 				33B254F52146C08F00364AE1 /* CaseIterable+TableViewHelping.swift in Sources */,
 				33B254B421469E5000364AE1 /* TripEditViewController.swift in Sources */,
+				9B5887F92149B8FC00A27881 /* UserActivities.swift in Sources */,
 				33B254FB2146C6C200364AE1 /* Identifiable.swift in Sources */,
 				33B254A321468D7E00364AE1 /* TripDetailViewController.swift in Sources */,
 				33B255032146CB5C00364AE1 /* HotelInfoCell.swift in Sources */,
