@@ -6,6 +6,7 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
+import Intents
 import SharedFramework
 import UIKit
 
@@ -93,9 +94,23 @@ class TripEditViewController: UIViewController {
 
         do {
             try self.trip.managedObjectContext?.dns_saveIfHasChanges()
+            self.donateEditTripIntent()
             self.dismiss(animated: true, completion: nil)
         } catch let error {
             debugPrint("Error saving! \(error)")
+        }
+    }
+    
+    private func donateEditTripIntent() {
+        let intent = EditTripIntent()
+        intent.name = self.trip.name
+        intent.destination = self.trip.destination
+        intent.suggestedInvocationPhrase = "Edit \(intent.destination ?? intent.name!) trip"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { error in
+            if let error = error {
+                debugPrint("Error donating intent: \(error)")
+            }
         }
     }
 

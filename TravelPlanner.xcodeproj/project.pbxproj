@@ -49,6 +49,9 @@
 		9B5887FC2149C6D700A27881 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FB2149C6D700A27881 /* Intents.framework */; };
 		9B5887FE2149C6DD00A27881 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */; };
 		9B5888002149C6E700A27881 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */; };
+		9B58880A2149F82C00A27881 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B5888092149F82C00A27881 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
+		9B58880B2149F82C00A27881 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B5888092149F82C00A27881 /* Intents.intentdefinition */; };
+		9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */; };
 		9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF22148341A0006C217 /* AirlineImporter.swift */; };
 		9B6C1EF9214834B20006C217 /* airlines.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF7214834B20006C217 /* airlines.csv */; };
 		9B6C1EFA214834B20006C217 /* airports.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9B6C1EF8214834B20006C217 /* airports.csv */; };
@@ -131,6 +134,8 @@
 		9B5887FB2149C6D700A27881 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9B5888092149F82C00A27881 /* Intents.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripIntentHandler.swift; sourceTree = "<group>"; };
 		9B6C1EF22148341A0006C217 /* AirlineImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineImporter.swift; sourceTree = "<group>"; };
 		9B6C1EF7214834B20006C217 /* airlines.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airlines.csv; sourceTree = "<group>"; };
 		9B6C1EF8214834B20006C217 /* airports.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = airports.csv; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 			children = (
 				33B2548F21468A8100364AE1 /* SharedFramework.h */,
 				9B6C1EF6214834B20006C217 /* RawData */,
+				9B5888012149F43000A27881 /* Intents */,
 				33B254EF2146BB2D00364AE1 /* CoreData */,
 				33B254ED2146BB0800364AE1 /* Extensions */,
 				33B254EE2146BB1F00364AE1 /* Helpers */,
@@ -362,6 +368,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B5888012149F43000A27881 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				9B5888092149F82C00A27881 /* Intents.intentdefinition */,
+				9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		9B6C1EF6214834B20006C217 /* RawData */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +454,9 @@
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
 					};
+					9B588812214A6C9E00A27881 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 				};
 			};
 			buildConfigurationList = 33B2546E21468A1C00364AE1 /* Build configuration list for PBXProject "TravelPlanner" */;
@@ -515,6 +533,7 @@
 				9B6C1F0A214877BD0006C217 /* UITextField+Validation.swift in Sources */,
 				33B254AD214697AB00364AE1 /* HotelEditViewController.swift in Sources */,
 				33B254AB2146979E00364AE1 /* TrainEditViewController.swift in Sources */,
+				9B58880A2149F82C00A27881 /* Intents.intentdefinition in Sources */,
 				9B6C1F042148721A0006C217 /* AirportSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,11 +542,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B58880B2149F82C00A27881 /* Intents.intentdefinition in Sources */,
 				33B254A521468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift in Sources */,
 				33B2549F21468B0F00364AE1 /* CoreDataManager.swift in Sources */,
 				9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */,
 				33B2549D21468AD700364AE1 /* TravelPlanner.xcdatamodeld in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
+				9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */,
 				33B254B221469B8C00364AE1 /* Formatters.swift in Sources */,
 				9B6C1EFC2148619D0006C217 /* Airport+Extensions.swift in Sources */,
 				33B254CD2146A6B500364AE1 /* Trip+Extensions.swift in Sources */,
@@ -724,6 +745,7 @@
 		33B2549621468A8100364AE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -753,6 +775,7 @@
 		33B2549721468A8100364AE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

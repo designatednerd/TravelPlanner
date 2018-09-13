@@ -56,18 +56,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        
+        if let intent = userActivity.interaction?.intent as? EditTripIntent {
+            var predicates = [NSPredicate]()
+            if let name = intent.name {
+                predicates.append(NSPredicate(format: "%K == %@", "name", name))
+            }
+            
+            if let destination = intent.destination {
+                predicates.append(NSPredicate(format: "%K == %@", "destination", destination))
+            }
+            
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+            
+            guard let trip = CoreDataManager.shared.mainContext.dns_fetch(Trip.self, with: predicate).first else {
+                assertionFailure("Could not find trip with predicate \(predicate)")
+                return false
+            }
+            
+            self.coordinator.editTrip(trip)
+            return true
+        }
+        
         guard let activityType = UserActivityType(rawValue: userActivity.activityType) else {
             return false
         }
         
+        guard
+            let window = self.window,
+            let rootViewController = window.rootViewController as? UINavigationController else {
+                debugPrint("Couldn't get root VC")
+                return false
+        }
+        
         switch activityType {
         case .viewTrip:
-            guard
-                let window = self.window,
-                let rootViewController = window.rootViewController as? UINavigationController else {
-                    debugPrint("Couldn't get root VC")
-                    return false
-            }
+            
             
             // See `restoreUserActivityState` in `TripListViewController`
             // to follow the continuation of the activity further.
