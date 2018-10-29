@@ -6,10 +6,9 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-class AirportSelectionViewController: UITableViewController {
+public class AirportSelectionViewController: UITableViewController {
     
     private lazy var airports: [Airport] = {
         return CoreDataManager.shared.mainContext.dns_allOf(Airport.self, sortDescriptors: [NSSortDescriptor.init(key: "name", ascending: true)])
@@ -51,15 +50,15 @@ class AirportSelectionViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredAirports?.count ?? self.airports.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
         let airport = self.airport(at: indexPath)
         cell.textLabel?.text = airport.displayName
@@ -73,7 +72,7 @@ class AirportSelectionViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let airport = self.airport(at: indexPath)
         self.currentlySelectedAirport = airport
         tableView.reloadData()
@@ -87,7 +86,7 @@ extension AirportSelectionViewController: UISearchResultsUpdating {
         return self.searchController.searchBar.text?.isEmpty == true
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         defer {
             self.tableView.reloadData()
         }

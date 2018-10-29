@@ -123,7 +123,12 @@ class TripEditViewController: UIViewController {
     }
 }
 
-extension TripEditViewController: StoryboardHosted {}
+extension TripEditViewController: StoryboardHosted {
+    
+    static var storyboard: Storyboard {
+        return AppStoryboard.main
+    }
+}
 
 extension TripEditViewController: UITextFieldDelegate {
     

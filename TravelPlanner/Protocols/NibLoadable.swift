@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SharedFramework
 
 protocol NibLoadable {
 

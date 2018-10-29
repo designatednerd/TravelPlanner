@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
-    func dequeue<T>(_ type: T.Type, at indexPath: IndexPath) -> T where T: UITableViewCell, T: Identifiable {
+    public func dequeue<T>(_ type: T.Type, at indexPath: IndexPath) -> T where T: UITableViewCell, T: Identifiable {
         guard let cell = self.dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
             fatalError("Couldn't get cell of proper type!")
         }

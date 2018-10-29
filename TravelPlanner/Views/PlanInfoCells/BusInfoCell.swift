@@ -13,6 +13,8 @@ class BusInfoCell: UITableViewCell {
 
 }
 
+extension BusInfoCell: NibLoadable {}
+
 extension BusInfoCell: PlanInfoCell {
 
     typealias PlanType = Bus
@@ -21,3 +23,5 @@ extension BusInfoCell: PlanInfoCell {
         //TODO
     }
 }
+
+

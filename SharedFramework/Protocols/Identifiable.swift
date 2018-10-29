@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol Identifiable {
+public protocol Identifiable {
     static var identifier: String { get }
 }
 
-extension Identifiable {
+public extension Identifiable {
 
-    static var identifier: String {
+    public static var identifier: String {
         return String(describing: self)
     }
 }

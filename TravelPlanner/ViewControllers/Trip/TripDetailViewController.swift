@@ -24,6 +24,9 @@ class TripDetailViewController: UIViewController {
         super.viewDidLoad()
 
         FlightInfoCell.register(in: self.tableView)
+        BusInfoCell.register(in: self.tableView)
+        HotelInfoCell.register(in: self.tableView)
+        TrainInfoCell.register(in: self.tableView)
 
         self.navigationItem.rightBarButtonItems = [
                 UIBarButtonItem(barButtonSystemItem: .edit,
@@ -74,7 +77,12 @@ class TripDetailViewController: UIViewController {
     }
 }
 
-extension TripDetailViewController: StoryboardHosted { }
+extension TripDetailViewController: StoryboardHosted {
+    
+    static var storyboard: Storyboard {
+        return AppStoryboard.main
+    }
+}
 
 extension TripDetailViewController: UITableViewDataSource {
 
@@ -88,7 +96,7 @@ extension TripDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch TripDetailSection.forIndex(section) {
+        switch TripDetailSection.dns_forIndex(section) {
         case .tripInfo:
             return 1
         case .plans:
@@ -97,7 +105,7 @@ extension TripDetailViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch TripDetailSection.forSection(in: indexPath) {
+        switch TripDetailSection.dns_forSection(in: indexPath) {
         case .tripInfo:
             let cell = tableView.dequeueReusableCell(withIdentifier: TripInfoCell.identifier) as! TripInfoCell
             cell.configure(for: self.trip)
@@ -123,7 +131,7 @@ extension TripDetailViewController: UITableViewDataSource {
 extension TripDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch TripDetailSection.forSection(in: indexPath) {
+        switch TripDetailSection.dns_forSection(in: indexPath) {
         case .tripInfo:
             // Nothing to do here.
             break

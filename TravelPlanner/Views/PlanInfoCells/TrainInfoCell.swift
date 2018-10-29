@@ -13,6 +13,8 @@ class TrainInfoCell: UITableViewCell {
 
 }
 
+extension TrainInfoCell: NibLoadable {}
+
 extension TrainInfoCell: PlanInfoCell {
     typealias PlanType = Train
 

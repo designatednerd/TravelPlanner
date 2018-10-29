@@ -6,10 +6,9 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-class AirlineSelectionViewController: UITableViewController {
+public class AirlineSelectionViewController: UITableViewController {
     
     private lazy var airlines: [Airline] = {
         return CoreDataManager.shared.mainContext.dns_allOf(Airline.self, sortDescriptors: [NSSortDescriptor.init(key: "name", ascending: true)])
@@ -21,13 +20,13 @@ class AirlineSelectionViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
 
     
-    var currentlySelectedAirline: Airline?
+    public var currentlySelectedAirline: Airline?
     
     let completion: (Airline) -> Void
     
     private let reuseIdentifier = "AirlineCell"
     
-    init(title: String, currentSelectedAirline: Airline?, completion: @escaping (Airline) -> Void) {
+    public init(title: String, currentSelectedAirline: Airline?, completion: @escaping (Airline) -> Void) {
         self.completion = completion
         self.currentlySelectedAirline = currentSelectedAirline
         super.init(style: .plain)
@@ -53,15 +52,15 @@ class AirlineSelectionViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.filteredAirlines?.count ?? self.airlines.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
         let airline = self.airline(at: indexPath)
         
@@ -76,7 +75,7 @@ class AirlineSelectionViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let airline = self.airline(at: indexPath)
         self.currentlySelectedAirline = airline
         tableView.reloadData()
@@ -90,7 +89,7 @@ extension AirlineSelectionViewController: UISearchResultsUpdating {
         return self.searchController.searchBar.text?.isEmpty == true
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         defer {
             self.tableView.reloadData()
         }

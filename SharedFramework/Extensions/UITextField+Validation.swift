@@ -10,7 +10,7 @@ import UIKit
 
 extension UITextField {
     
-    var hasText: Bool {
+    var dns_hasText: Bool {
         guard let text = self.text else {
             return false
         }
@@ -18,7 +18,7 @@ extension UITextField {
         return !text.isEmpty
     }
     
-    var containsOnlyNumbers: Bool {
+    var dns_containsOnlyNumbers: Bool {
         guard let text = self.text, !text.isEmpty else {
             // Doesn't contain anything
             return false

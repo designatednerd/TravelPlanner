@@ -65,7 +65,12 @@ class TripListViewController: UIViewController {
     }
 }
 
-extension TripListViewController: StoryboardHosted { }
+extension TripListViewController: StoryboardHosted {
+    
+    static var storyboard: Storyboard {
+        return AppStoryboard.main
+    }
+}
 
 extension TripListViewController: UITableViewDataSource {
 

@@ -20,7 +20,7 @@ class TripCoordinator {
         return navController
     }()
 
-    var flightCoordinator: FlightCoordinator?
+    var editCoordinator: PlanEditCoordinator?
     
     // MARK: - Public actions
 
@@ -60,46 +60,8 @@ class TripCoordinator {
     }
 
     private func showEditController<T: Plan>(for item: T) {
-        if let bus = item as? Bus {
-            self.showBusEditViewController(for: bus)
-        } else if let flight = item as? Flight {
-            self.showFlightEditViewController(for: flight)
-        } else if let hotel = item as? Hotel {
-            self.showHotelEditViewController(for: hotel)
-        } else if let train = item as? Train {
-            self.showTrainEditViewController(for: train)
-        } else {
-            fatalError("Unhandled item type: \(type(of: item))")
-        }
-    }
-
-    private func showBusEditViewController(for bus: Bus) {
-        let busEditVC = BusEditViewController()
-        busEditVC.coordinator = self
-        busEditVC.bus = bus
-
-        self.navController.present(busEditVC, animated: true)
-    }
-
-    private func showHotelEditViewController(for hotel: Hotel) {
-        let hotelEditVC = HotelEditViewController()
-        hotelEditVC.coordinator = self
-        hotelEditVC.hotel = hotel
-
-        self.navController.present(hotelEditVC, animated: true)
-    }
-
-    private func showFlightEditViewController(for flight: Flight) {
-        self.flightCoordinator = FlightCoordinator(flight: flight)
-        self.navController.present(self.flightCoordinator!.navController, animated: true)
-    }
-
-    private func showTrainEditViewController(for train: Train) {
-        let trainEditVC = TrainEditViewController()
-        trainEditVC.train = train
-        trainEditVC.coordinator = self
-
-        self.navController.present(trainEditVC, animated: true)
+        self.editCoordinator = PlanEditCoordinator(plan: item)
+        self.navController.present(self.editCoordinator!.navController, animated: true)
     }
 
     private func showTripEditViewController(with trip: Trip) {

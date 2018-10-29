@@ -13,6 +13,8 @@ class HotelInfoCell: UITableViewCell {
 
 }
 
+extension HotelInfoCell: NibLoadable {}
+
 extension HotelInfoCell: PlanInfoCell {
     typealias PlanType = Hotel
 

@@ -6,13 +6,23 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-class FlightEditViewController: UIViewController {
+public class FlightEditViewController: UIViewController {
 
-    var coordinator: FlightCoordinator?
-    var flight: Flight!
+    public weak var coordinator: PlanEditCoordinator? {
+        didSet {
+            guard let planCoord = coordinator else {
+                self.flightCoordinator = nil
+                return
+            }
+            
+            self.flightCoordinator = FlightCoordinator(navController: planCoord.navController, plan: planCoord.plan)
+        }
+    }
+    
+    var flightCoordinator: FlightCoordinator?
+    public var flight: Flight!
 
     @IBOutlet private var airlineButton: UIButton!
     @IBOutlet private var flightNumberTextField: UITextField!
@@ -93,7 +103,7 @@ class FlightEditViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Edit Flight"
         self.configure(for: self.flight)
@@ -137,47 +147,21 @@ class FlightEditViewController: UIViewController {
     }
     
     @IBAction func selectAirline() {
-        coordinator?.showAirlineSelector(completion: { [weak self] airline in
+        flightCoordinator?.showAirlineSelector(completion: { [weak self] airline in
             self?.selectedAirline = airline
         })
     }
     
     @IBAction func selectArrivalAirport() {
-        coordinator?.showArrivalAirportSelector(completion: { [weak self] airport in
+        flightCoordinator?.showArrivalAirportSelector(completion: { [weak self] airport in
             self?.selectedArrivalAirport = airport
         })
     }
     
     @IBAction func selectDepartureAirport() {
-        coordinator?.showDepartureAirportSelector(completion: { [weak self] airport in
+        flightCoordinator?.showDepartureAirportSelector(completion: { [weak self] airport in
             self?.selectedDepartureAirport = airport
         })
-    }
-    
-    @IBAction func cancel() {
-        if self.flight.dns_hasNoPersistedValues {
-            CoreDataManager.shared.mainContext.delete(self.flight)
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    @IBAction func save() {
-        guard self.validate() else { return }
-
-        self.flight.airline = self.selectedAirline
-        self.flight.flightNumber = self.flightNumberTextField.text
-        self.flight.startDate = self.departureDate
-        self.flight.departureAirport = self.selectedDepartureAirport
-
-        self.flight.endDate = self.arrivalDate
-        self.flight.arrivalAirport = self.selectedArrivalAirport
-
-        do {
-            try self.flight.managedObjectContext?.dns_saveIfHasChanges()
-            self.dismiss(animated: true, completion: nil)
-        } catch let error {
-            print("Error saving: \(error)")
-        }
     }
 
     func validate() -> Bool {
@@ -185,8 +169,8 @@ class FlightEditViewController: UIViewController {
             self.selectedAirline != nil,
             self.selectedArrivalAirport != nil,
             self.selectedDepartureAirport != nil,
-            self.flightNumberTextField.hasText,
-            self.flightNumberTextField.containsOnlyNumbers else {
+            self.flightNumberTextField.dns_hasText,
+            self.flightNumberTextField.dns_containsOnlyNumbers else {
                 return false
         }
 
@@ -195,11 +179,16 @@ class FlightEditViewController: UIViewController {
 
 }
 
-extension FlightEditViewController: StoryboardHosted {}
+extension FlightEditViewController: StoryboardHosted {
+    
+    public static var storyboard: Storyboard {
+        return SharedStoryboard.flight
+    }
+}
 
 extension FlightEditViewController: UITextFieldDelegate {
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField === self.departureTimeTextField {
             self.timePicker.date = self.departureDate
         } else if textField === self.departureDateTextField {
@@ -211,5 +200,45 @@ extension FlightEditViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+
+extension FlightEditViewController: PlanEditing {
+    
+    func savePressed() {
+        guard self.validate() else { return }
+        
+        self.flight.airline = self.selectedAirline
+        self.flight.flightNumber = self.flightNumberTextField.text
+        self.flight.startDate = self.departureDate
+        self.flight.departureAirport = self.selectedDepartureAirport
+        
+        self.flight.endDate = self.arrivalDate
+        self.flight.arrivalAirport = self.selectedArrivalAirport
+        
+        do {
+            try self.flight.managedObjectContext?.dns_saveIfHasChanges()
+            if let parent = self.parent {
+                parent.dismiss(animated: true, completion: nil)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } catch let error {
+            print("Error saving: \(error)")
+        }
+    }
+    
+    var plan: Plan {
+        get {
+            return self.flight
+        }
+        set {
+            guard let flight = newValue as? Flight else {
+                fatalError("THIS IS NOT A FLIGHT")
+            }
+            
+            self.flight = flight
+        }
     }
 }

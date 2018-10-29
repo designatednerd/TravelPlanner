@@ -6,24 +6,15 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-class FlightCoordinator {
+public class FlightCoordinator: PlanEditCoordinator {
     
-    private let flight: Flight
-    let navController: UINavigationController
-    
-    init(flight: Flight) {
-        self.flight = flight
-        let root = FlightEditViewController.loadFromStoryboard()
-        self.navController = UINavigationController(rootViewController: root)
-        
-        root.coordinator = self
-        root.flight = flight
+    var flight: Flight {
+        return self.plan as! Flight
     }
     
-    func showAirlineSelector(completion: @escaping (Airline) -> Void) {
+    public func showAirlineSelector(completion: @escaping (Airline) -> Void) {
         let selector = AirlineSelectionViewController(
             title: "Select Airline",
             currentSelectedAirline: self.flight.airline,
@@ -35,14 +26,14 @@ class FlightCoordinator {
         self.navController.pushViewController(selector, animated: true)
     }
     
-    func showDepartureAirportSelector(completion: @escaping (Airport) -> Void) {
+    public func showDepartureAirportSelector(completion: @escaping (Airport) -> Void) {
         self.showAirportSelector(title: "Select Departure Airport",
                                  
                                  currentSelected: self.flight.departureAirport,
                                  completion: completion)
     }
     
-    func showArrivalAirportSelector(completion: @escaping (Airport) -> Void) {
+    public func showArrivalAirportSelector(completion: @escaping (Airport) -> Void) {
         self.showAirportSelector(title: "Select Arrival Airport",
                                  currentSelected: self.flight.arrivalAirport,
                                  completion: completion)
