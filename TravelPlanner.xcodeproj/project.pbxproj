@@ -256,13 +256,13 @@
 			children = (
 				33B2547621468A1C00364AE1 /* AppDelegate.swift */,
 				9B5887F82149B8FC00A27881 /* UserActivities.swift */,
-				33B2547D21468A1E00364AE1 /* Assets.xcassets */,
 				33B254EC2146BAF200364AE1 /* Coordinators */,
 				33B254E92146BAC800364AE1 /* Protocols */,
 				33B254F12146BB6400364AE1 /* Storyboards */,
 				33B254E62146BA8B00364AE1 /* ViewControllers */,
 				33B254F72146C5F600364AE1 /* Views */,
 				33B2548221468A1E00364AE1 /* Info.plist */,
+				33B2547D21468A1E00364AE1 /* Assets.xcassets */,
 			);
 			path = TravelPlanner;
 			sourceTree = "<group>";
@@ -271,16 +271,16 @@
 			isa = PBXGroup;
 			children = (
 				9B47B55A2187364E00140CA4 /* Coordinators */,
-				9B47B54A2187318D00140CA4 /* ViewControllers */,
-				33B2548F21468A8100364AE1 /* SharedFramework.h */,
-				9B6C1EF6214834B20006C217 /* RawData */,
-				9B5888012149F43000A27881 /* Intents */,
-				9B47B53921872F5D00140CA4 /* Storyboards */,
 				33B254EF2146BB2D00364AE1 /* CoreData */,
 				33B254ED2146BB0800364AE1 /* Extensions */,
-				9B47B554218734EB00140CA4 /* Protocols */,
 				33B254EE2146BB1F00364AE1 /* Helpers */,
+				9B5888012149F43000A27881 /* Intents */,
+				9B47B554218734EB00140CA4 /* Protocols */,
+				9B6C1EF6214834B20006C217 /* RawData */,
+				9B47B53921872F5D00140CA4 /* Storyboards */,
+				9B47B54A2187318D00140CA4 /* ViewControllers */,
 				33B2549021468A8100364AE1 /* Info.plist */,
+				33B2548F21468A8100364AE1 /* SharedFramework.h */,
 			);
 			path = SharedFramework;
 			sourceTree = "<group>";
@@ -296,9 +296,9 @@
 		33B254E72146BA9F00364AE1 /* Trip */ = {
 			isa = PBXGroup;
 			children = (
-				33B2547821468A1C00364AE1 /* TripListViewController.swift */,
 				33B254A221468D7E00364AE1 /* TripDetailViewController.swift */,
 				33B254B321469E5000364AE1 /* TripEditViewController.swift */,
+				33B2547821468A1C00364AE1 /* TripListViewController.swift */,
 			);
 			path = Trip;
 			sourceTree = "<group>";
@@ -306,7 +306,6 @@
 		33B254E92146BAC800364AE1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				33B254E22146A96500364AE1 /* AppStoryboard.swift */,
 				33B2550C2146FE7500364AE1 /* NibLoadable.swift */,
 			);
 			path = Protocols;
@@ -336,9 +335,9 @@
 		33B254EE2146BB1F00364AE1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				33B254B021469B8600364AE1 /* Formatters.swift */,
-				9B6C1F0B21490D930006C217 /* CSVImporter.swift */,
 				9B47B5482187309000140CA4 /* BundleHelper.swift */,
+				9B6C1F0B21490D930006C217 /* CSVImporter.swift */,
+				33B254B021469B8600364AE1 /* Formatters.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -348,9 +347,9 @@
 			children = (
 				33B2549A21468ACF00364AE1 /* TravelPlanner.xcdatamodeld */,
 				33B254F02146BB4700364AE1 /* ManagedObjectExtensions */,
-				33B2549E21468B0F00364AE1 /* CoreDataManager.swift */,
 				9B6C1EF22148341A0006C217 /* AirlineImporter.swift */,
 				9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */,
+				33B2549E21468B0F00364AE1 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -358,10 +357,10 @@
 		33B254F02146BB4700364AE1 /* ManagedObjectExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
-				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
 				9B6C1F072148763B0006C217 /* Airline+Extensions.swift */,
+				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
 				33B255062146CF5500364AE1 /* Flight+Extensions.swift */,
+				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
 			);
 			path = ManagedObjectExtensions;
 			sourceTree = "<group>";
@@ -369,8 +368,9 @@
 		33B254F12146BB6400364AE1 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				33B2547A21468A1C00364AE1 /* Main.storyboard */,
+				33B254E22146A96500364AE1 /* AppStoryboard.swift */,
 				33B2547F21468A1E00364AE1 /* LaunchScreen.storyboard */,
+				33B2547A21468A1C00364AE1 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -403,9 +403,9 @@
 		9B47B53921872F5D00140CA4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				9B47B5692187401F00140CA4 /* Generic.storyboard */,
 				9B47B54021872FCF00140CA4 /* Bus.storyboard */,
 				9B47B54221872FCF00140CA4 /* Flight.storyboard */,
+				9B47B5692187401F00140CA4 /* Generic.storyboard */,
 				9B47B53A21872FB600140CA4 /* Hotel.storyboard */,
 				9B47B53C21872FB600140CA4 /* Train.storyboard */,
 			);
@@ -415,13 +415,11 @@
 		9B47B54A2187318D00140CA4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9B47B56521873FE300140CA4 /* GenericEditViewController.swift */,
 				33B254A82146978F00364AE1 /* BusEditViewController.swift */,
-				33B254AE214697B700364AE1 /* FlightEditViewController.swift */,
+				9B767DDA21875E300046BE3F /* Flight */,
+				9B47B56521873FE300140CA4 /* GenericEditViewController.swift */,
 				33B254AC214697AB00364AE1 /* HotelEditViewController.swift */,
 				33B254AA2146979E00364AE1 /* TrainEditViewController.swift */,
-				9B6C1F05214875C10006C217 /* AirlineSelectionViewController.swift */,
-				9B6C1F032148721A0006C217 /* AirportSelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -439,8 +437,8 @@
 		9B47B55A2187364E00140CA4 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				9B47B56D218744AB00140CA4 /* PlanEditCoordinator.swift */,
 				9B6C1EFD21486D000006C217 /* FlightCoordinator.swift */,
+				9B47B56D218744AB00140CA4 /* PlanEditCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -480,6 +478,16 @@
 				9B6C1EF8214834B20006C217 /* airports.csv */,
 			);
 			path = RawData;
+			sourceTree = "<group>";
+		};
+		9B767DDA21875E300046BE3F /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				9B6C1F05214875C10006C217 /* AirlineSelectionViewController.swift */,
+				9B6C1F032148721A0006C217 /* AirportSelectionViewController.swift */,
+				33B254AE214697B700364AE1 /* FlightEditViewController.swift */,
+			);
+			path = Flight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
