@@ -76,6 +76,11 @@
 		9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F072148763B0006C217 /* Airline+Extensions.swift */; };
 		9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F0B21490D930006C217 /* CSVImporter.swift */; };
 		9B6C1F0E21490EDF0006C217 /* AirportImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */; };
+		9B767DDF218763350046BE3F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DDE218763350046BE3F /* DataSource.swift */; };
+		9B767DE1218768910046BE3F /* SearchableTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE0218768910046BE3F /* SearchableTableViewDataSource.swift */; };
+		9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */; };
+		9B767DE821877C710046BE3F /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE721877C710046BE3F /* TableViewDataSource.swift */; };
+		9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE92187813E0046BE3F /* AirlineCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +203,11 @@
 		9B6C1F072148763B0006C217 /* Airline+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airline+Extensions.swift"; sourceTree = "<group>"; };
 		9B6C1F0B21490D930006C217 /* CSVImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImporter.swift; sourceTree = "<group>"; };
 		9B6C1F0D21490EDF0006C217 /* AirportImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportImporter.swift; sourceTree = "<group>"; };
+		9B767DDE218763350046BE3F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		9B767DE0218768910046BE3F /* SearchableTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTableViewDataSource.swift; sourceTree = "<group>"; };
+		9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSelectionDataSource.swift; sourceTree = "<group>"; };
+		9B767DE721877C710046BE3F /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		9B767DE92187813E0046BE3F /* AirlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +280,7 @@
 		33B2548E21468A8100364AE1 /* SharedFramework */ = {
 			isa = PBXGroup;
 			children = (
+				9B767DDB21875EC80046BE3F /* DataSources */,
 				9B47B55A2187364E00140CA4 /* Coordinators */,
 				33B254EF2146BB2D00364AE1 /* CoreData */,
 				33B254ED2146BB0800364AE1 /* Extensions */,
@@ -279,6 +290,7 @@
 				9B6C1EF6214834B20006C217 /* RawData */,
 				9B47B53921872F5D00140CA4 /* Storyboards */,
 				9B47B54A2187318D00140CA4 /* ViewControllers */,
+				9B767DEC2187814C0046BE3F /* Views */,
 				33B2549021468A8100364AE1 /* Info.plist */,
 				33B2548F21468A8100364AE1 /* SharedFramework.h */,
 			);
@@ -490,6 +502,41 @@
 			path = Flight;
 			sourceTree = "<group>";
 		};
+		9B767DDB21875EC80046BE3F /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				9B767DE421876C710046BE3F /* Generic */,
+				9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		9B767DE421876C710046BE3F /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				9B767DDE218763350046BE3F /* DataSource.swift */,
+				9B767DE721877C710046BE3F /* TableViewDataSource.swift */,
+				9B767DE0218768910046BE3F /* SearchableTableViewDataSource.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		9B767DEB218781460046BE3F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9B767DE92187813E0046BE3F /* AirlineCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9B767DEC2187814C0046BE3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B767DEB218781460046BE3F /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -677,14 +724,18 @@
 				9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */,
 				9B47B5492187309000140CA4 /* BundleHelper.swift in Sources */,
 				9B47B5472187301300140CA4 /* Storyboard.swift in Sources */,
+				9B767DDF218763350046BE3F /* DataSource.swift in Sources */,
 				9B47B54F218733CB00140CA4 /* AirlineSelectionViewController.swift in Sources */,
 				33B2549D21468AD700364AE1 /* TravelPlanner.xcdatamodeld in Sources */,
 				9B47B54C218733CB00140CA4 /* FlightEditViewController.swift in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
 				9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */,
+				9B767DE1218768910046BE3F /* SearchableTableViewDataSource.swift in Sources */,
 				9B47B5512187347900140CA4 /* FlightCoordinator.swift in Sources */,
 				33B254B221469B8C00364AE1 /* Formatters.swift in Sources */,
 				9B47B56E218744AB00140CA4 /* PlanEditCoordinator.swift in Sources */,
+				9B767DE821877C710046BE3F /* TableViewDataSource.swift in Sources */,
+				9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */,
 				9B47B56621873FE300140CA4 /* GenericEditViewController.swift in Sources */,
 				9B6C1EFC2148619D0006C217 /* Airport+Extensions.swift in Sources */,
 				33B254CD2146A6B500364AE1 /* Trip+Extensions.swift in Sources */,
@@ -692,6 +743,7 @@
 				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
 				9B47B559218735F200140CA4 /* UITableView+Generics.swift in Sources */,
 				33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */,
+				9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */,
 				9B47B5552187351400140CA4 /* Identifiable.swift in Sources */,
 				9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */,
 				9B47B54E218733CB00140CA4 /* TrainEditViewController.swift in Sources */,
