@@ -22,4 +22,8 @@ extension NSManagedObject {
     public var dns_hasNoPersistedValues: Bool {
         return self.committedValues(forKeys: nil).isEmpty
     }
+    
+    public func dns_discardUnsavedChanges() {
+        self.managedObjectContext?.refresh(self, mergeChanges: false)
+    }
 }

@@ -21,6 +21,8 @@ extension PlanEditing where Self: UIViewController {
     func cancelPressed() {
         if plan.dns_hasNoPersistedValues {
             CoreDataManager.shared.mainContext.delete(self.plan)
+        } else {
+            plan.dns_discardUnsavedChanges()
         }
         
         self.dismiss(animated: true, completion: nil)
