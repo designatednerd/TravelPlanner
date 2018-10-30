@@ -70,39 +70,6 @@ public class FlightEditViewController: UIViewController {
         }
     }
     
-    private var selectedAirline: Airline? {
-        didSet {
-            guard let airline = self.selectedAirline else {
-                self.airlineButton.setTitle("Select Airline", for: .normal)
-                return
-            }
-            
-            self.airlineButton.setTitle(airline.name!, for: .normal)
-        }
-    }
-    
-    private var selectedDepartureAirport: Airport? {
-        didSet {
-            guard let airport = self.selectedDepartureAirport else {
-                self.departureAirportButton.setTitle("Select Departure Airport", for: .normal)
-                return
-            }
-            
-            self.departureAirportButton.setTitle(airport.displayName, for: .normal)
-        }
-    }
-    
-    private var selectedArrivalAirport: Airport? {
-        didSet {
-            guard let airport = self.selectedArrivalAirport else {
-                self.arrivalAirportButton.setTitle("Select Departure Airport", for: .normal)
-                return
-            }
-            
-            self.arrivalAirportButton.setTitle(airport.displayName, for: .normal)
-        }
-    }
-    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Edit Flight"
@@ -132,9 +99,9 @@ public class FlightEditViewController: UIViewController {
     }
     
     private func configure(for flight: Flight) {
-        self.selectedAirline = flight.airline
-        self.selectedArrivalAirport = flight.arrivalAirport
-        self.selectedDepartureAirport = flight.departureAirport
+        configureAirlineButton()
+        configureDepartureAirportButton()
+        configureArrivalAirportButton()
         self.flightNumberTextField.text = flight.flightNumber ?? ""
         
         if let departure = flight.startDate {
@@ -148,27 +115,57 @@ public class FlightEditViewController: UIViewController {
     
     @IBAction func selectAirline() {
         flightCoordinator?.showAirlineSelector(completion: { [weak self] airline in
-            self?.selectedAirline = airline
+            self?.flight.airline = airline
+            self?.configureAirlineButton()
         })
+    }
+    
+    private func configureAirlineButton() {
+        guard let airline = self.flight.airline else {
+            self.airlineButton.setTitle("Select Airline", for: .normal)
+            return
+        }
+        
+        self.airlineButton.setTitle(airline.name!, for: .normal)
     }
     
     @IBAction func selectArrivalAirport() {
         flightCoordinator?.showArrivalAirportSelector(completion: { [weak self] airport in
-            self?.selectedArrivalAirport = airport
+            self?.flight.arrivalAirport = airport
+            self?.configureArrivalAirportButton()
         })
+    }
+    
+    private func configureArrivalAirportButton() {
+        guard let airport = self.flight.arrivalAirport else {
+            self.arrivalAirportButton.setTitle("Select Arrival Airport", for: .normal)
+            return
+        }
+        
+        self.arrivalAirportButton.setTitle(airport.displayName, for: .normal)
     }
     
     @IBAction func selectDepartureAirport() {
         flightCoordinator?.showDepartureAirportSelector(completion: { [weak self] airport in
-            self?.selectedDepartureAirport = airport
+            self?.flight.departureAirport = airport
+            self?.configureDepartureAirportButton()
         })
+    }
+    
+    private func configureDepartureAirportButton() {
+        guard let airport = self.flight.departureAirport else {
+            self.departureAirportButton.setTitle("Select Departure Airport", for: .normal)
+            return
+        }
+        
+        self.departureAirportButton.setTitle(airport.displayName, for: .normal)
     }
 
     func validate() -> Bool {
         guard
-            self.selectedAirline != nil,
-            self.selectedArrivalAirport != nil,
-            self.selectedDepartureAirport != nil,
+            self.flight.airline != nil,
+            self.flight.departureAirport != nil,
+            self.flight.departureAirport != nil,
             self.flightNumberTextField.dns_hasText,
             self.flightNumberTextField.dns_containsOnlyNumbers else {
                 return false
@@ -176,7 +173,6 @@ public class FlightEditViewController: UIViewController {
 
         return true
     }
-
 }
 
 extension FlightEditViewController: StoryboardHosted {
@@ -203,19 +199,14 @@ extension FlightEditViewController: UITextFieldDelegate {
     }
 }
 
-
 extension FlightEditViewController: PlanEditing {
     
     func savePressed() {
         guard self.validate() else { return }
         
-        self.flight.airline = self.selectedAirline
         self.flight.flightNumber = self.flightNumberTextField.text
         self.flight.startDate = self.departureDate
-        self.flight.departureAirport = self.selectedDepartureAirport
-        
         self.flight.endDate = self.arrivalDate
-        self.flight.arrivalAirport = self.selectedArrivalAirport
         
         do {
             try self.flight.managedObjectContext?.dns_saveIfHasChanges()
