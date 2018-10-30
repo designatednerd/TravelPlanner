@@ -81,6 +81,8 @@
 		9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */; };
 		9B767DE821877C710046BE3F /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE721877C710046BE3F /* TableViewDataSource.swift */; };
 		9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE92187813E0046BE3F /* AirlineCell.swift */; };
+		9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DED21885F870046BE3F /* AirportSelectionDataSource.swift */; };
+		9B767DF021885F930046BE3F /* AirportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DEF21885F930046BE3F /* AirportCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +210,8 @@
 		9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSelectionDataSource.swift; sourceTree = "<group>"; };
 		9B767DE721877C710046BE3F /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		9B767DE92187813E0046BE3F /* AirlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineCell.swift; sourceTree = "<group>"; };
+		9B767DED21885F870046BE3F /* AirportSelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSelectionDataSource.swift; sourceTree = "<group>"; };
+		9B767DEF21885F930046BE3F /* AirportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +511,7 @@
 			children = (
 				9B767DE421876C710046BE3F /* Generic */,
 				9B767DE221876B4E0046BE3F /* AirlineSelectionDataSource.swift */,
+				9B767DED21885F870046BE3F /* AirportSelectionDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				9B767DE92187813E0046BE3F /* AirlineCell.swift */,
+				9B767DEF21885F930046BE3F /* AirportCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -728,6 +734,7 @@
 				9B47B54F218733CB00140CA4 /* AirlineSelectionViewController.swift in Sources */,
 				33B2549D21468AD700364AE1 /* TravelPlanner.xcdatamodeld in Sources */,
 				9B47B54C218733CB00140CA4 /* FlightEditViewController.swift in Sources */,
+				9B767DF021885F930046BE3F /* AirportCell.swift in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
 				9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */,
 				9B767DE1218768910046BE3F /* SearchableTableViewDataSource.swift in Sources */,
@@ -741,6 +748,7 @@
 				33B254CD2146A6B500364AE1 /* Trip+Extensions.swift in Sources */,
 				33B254A72146902D00364AE1 /* NSManagedObject+Convenience.swift in Sources */,
 				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
+				9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */,
 				9B47B559218735F200140CA4 /* UITableView+Generics.swift in Sources */,
 				33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */,
 				9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */,
