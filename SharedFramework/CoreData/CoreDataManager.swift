@@ -15,7 +15,6 @@ public class CoreDataManager {
     public static let shared = CoreDataManager()
     private init() {
         // Poke the container
-        print(NSPersistentContainer.defaultDirectoryURL())
         self.persistentContainer.loadPersistentStores(completionHandler: { description, error in
             if let error = error {
                 fatalError("Could not load persistent stores! \(error)")
@@ -35,6 +34,11 @@ public class CoreDataManager {
 
         let container = NSPersistentContainer(name: "TravelPlanner", managedObjectModel: managedObjectModel)
 
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: FileManager
+            .default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.com.designatednerd.TravelPlanner")!
+            .appendingPathComponent("CoreData.sqlite"))]
+        
         return container
     }()
 

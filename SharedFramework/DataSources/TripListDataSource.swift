@@ -19,4 +19,10 @@ public class TripListDataSource: TableViewDataSource<Trip, TripCell> {
         cell.textLabel?.text = trip.name ?? "(Unnamed)"
         cell.detailTextLabel?.text = trip.formattedTripInterval
     }
+    
+    public override func reloadData() {
+        let trips = CoreDataManager.shared.mainContext.dns_allOf(Trip.self)
+        self.replaceItems(with: trips)
+        super.reloadData()
+    }
 }

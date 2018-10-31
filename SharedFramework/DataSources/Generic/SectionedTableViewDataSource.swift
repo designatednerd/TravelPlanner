@@ -8,17 +8,32 @@
 
 import UIKit
 
+public protocol Reloadable {
+    func reloadData()
+}
+
+public typealias ReloadableDataSource = UITableViewDataSource & Reloadable
+
 public class SectionedTableViewDataSource: NSObject, SectionedDataSource, UITableViewDataSource {
     
-    public typealias DataSourceType = UITableViewDataSource
+    public typealias DataSourceType = ReloadableDataSource
     
-    public var dataSources: [UITableViewDataSource]
+    public var dataSources: [ReloadableDataSource]
     
     private weak var tableView: UITableView?
     
-    init(dataSources: [UITableViewDataSource], tableView: UITableView) {
+    init(dataSources: [ReloadableDataSource], tableView: UITableView) {
         self.dataSources = dataSources
         self.tableView = tableView
+    }
+    
+    public func reloadAll() {
+        dataSources.forEach { $0.reloadData() }
+    }
+    
+    public func reload(for section: Int) {
+        let sectionToReload = self.sectionDataSource(for: section)
+        sectionToReload.reloadData()
     }
     
     // MARK: Data Source

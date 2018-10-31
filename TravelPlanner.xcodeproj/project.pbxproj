@@ -224,6 +224,8 @@
 		9BB566C12189E2E500C1359F /* SectionedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedDataSource.swift; sourceTree = "<group>"; };
 		9BB566C32189E63200C1359F /* SectionedTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedTableViewDataSource.swift; sourceTree = "<group>"; };
 		9BB566C6218A00A300C1359F /* TripInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripInfoCell.xib; sourceTree = "<group>"; };
+		9BB566CE218A080700C1359F /* TravelPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TravelPlanner.entitlements; sourceTree = "<group>"; };
+		9BB566CF218A082400C1359F /* IntentsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentsExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,12 +282,12 @@
 		33B2547521468A1C00364AE1 /* TravelPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				9BB566CE218A080700C1359F /* TravelPlanner.entitlements */,
 				33B2547621468A1C00364AE1 /* AppDelegate.swift */,
 				9B5887F82149B8FC00A27881 /* UserActivities.swift */,
 				33B254EC2146BAF200364AE1 /* Coordinators */,
 				33B254F12146BB6400364AE1 /* Storyboards */,
 				33B254E62146BA8B00364AE1 /* ViewControllers */,
-				33B254F72146C5F600364AE1 /* Views */,
 				33B2548221468A1E00364AE1 /* Info.plist */,
 				33B2547D21468A1E00364AE1 /* Assets.xcassets */,
 			);
@@ -394,13 +396,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		33B254F72146C5F600364AE1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		33B255142147017800364AE1 /* PlanInfoCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +478,7 @@
 		9B588814214A6C9E00A27881 /* IntentsExtension */ = {
 			isa = PBXGroup;
 			children = (
+				9BB566CF218A082400C1359F /* IntentsExtension.entitlements */,
 				9B588815214A6C9E00A27881 /* IntentHandler.swift */,
 				9B588817214A6C9E00A27881 /* Info.plist */,
 			);
@@ -636,6 +632,11 @@
 				TargetAttributes = {
 					33B2547221468A1C00364AE1 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					33B2548C21468A8100364AE1 = {
 						CreatedOnToolsVersion = 10.0;
@@ -643,6 +644,11 @@
 					};
 					9B588812214A6C9E00A27881 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -987,6 +993,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TravelPlanner/TravelPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U392EMNT3;
 				INFOPLIST_FILE = TravelPlanner/Info.plist;
@@ -1006,6 +1013,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TravelPlanner/TravelPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U392EMNT3;
 				INFOPLIST_FILE = TravelPlanner/Info.plist;
@@ -1082,6 +1090,7 @@
 		9B58881C214A6C9E00A27881 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U392EMNT3;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;
@@ -1101,6 +1110,7 @@
 		9B58881D214A6C9E00A27881 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4U392EMNT3;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;

@@ -11,7 +11,7 @@ import UIKit
 public typealias IdentifiableCell = UITableViewCell & Identifiable
 public typealias NibLoadableCell = UITableViewCell & NibLoadable
 
-open class TableViewDataSource<Item, Cell: UITableViewCell>: NSObject, UITableViewDataSource, DataSource {
+open class TableViewDataSource<Item, Cell: UITableViewCell>: NSObject, UITableViewDataSource, DataSource, Reloadable {
 
     public typealias DataType = Item
     
@@ -63,6 +63,14 @@ open class TableViewDataSource<Item, Cell: UITableViewCell>: NSObject, UITableVi
     
     open func configure(cell: Cell, for item: Item) {
         assertionFailure("Subclasses must override!")
+    }
+    
+    open func replaceItems(with items: [Item]) {
+        self.items = items
+    }
+    
+    open func reloadData() {
+        self.tableView?.reloadData()
     }
     
 }

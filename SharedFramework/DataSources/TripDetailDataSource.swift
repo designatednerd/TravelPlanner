@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class TripDetailDataSource: SectionedTableViewDataSource {
+public class TripDetailDataSource: SectionedTableViewDataSource, Reloadable {
     
     private let trip: Trip
     
     public init(trip: Trip, tableView: UITableView) {
         self.trip = trip
         
-        let dataSources: [UITableViewDataSource] = [
+        let dataSources: [ReloadableDataSource] = [
             TripInfoDataSource(trip: trip, tableView: tableView),
-            PlanInfoDataSource(plans: trip.plansByDate, tableView: tableView)
+            PlanInfoDataSource(trip: trip, tableView: tableView)
         ]
         
         super.init(dataSources: dataSources, tableView: tableView)
@@ -37,6 +37,11 @@ public class TripDetailDataSource: SectionedTableViewDataSource {
             return nil
         }
     }
+    
+    public func reloadData() {
+        self.reload(for: 1)
+    }
+
 }
 
 class TripInfoDataSource: TableViewDataSource<Trip, TripInfoCell> {
@@ -52,14 +57,16 @@ class TripInfoDataSource: TableViewDataSource<Trip, TripInfoCell> {
 
 class PlanInfoDataSource: TableViewDataSource<Plan, UITableViewCell> {
     
-    init(plans: [Plan], tableView: UITableView) {
-        
+    private let trip: Trip
+    
+    init(trip: Trip, tableView: UITableView) {
+        self.trip = trip
         FlightInfoCell.register(in: tableView)
         BusInfoCell.register(in: tableView)
         HotelInfoCell.register(in: tableView)
         TrainInfoCell.register(in: tableView)
         
-        super.init(items: plans, tableView: tableView)
+        super.init(items: trip.plansByDate, tableView: tableView)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,4 +85,8 @@ class PlanInfoDataSource: TableViewDataSource<Plan, UITableViewCell> {
         }
     }
     
+    override func reloadData() {
+        self.replaceItems(with: trip.plansByDate)
+        super.reloadData()
+    }
 }
