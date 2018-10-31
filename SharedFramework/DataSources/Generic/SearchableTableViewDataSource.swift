@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class SearchableTableViewDataSource<Item, Cell: IdentifiableCell>: TableViewDataSource<Item, Cell>, UISearchResultsUpdating {
+open class SearchableTableViewDataSource<Item, Cell: UITableViewCell>: TableViewDataSource<Item, Cell>, UISearchResultsUpdating {
     
     private var filteredItems: [Item]?
 

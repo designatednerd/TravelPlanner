@@ -6,10 +6,9 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-protocol PlanInfoCell: Identifiable {
+public protocol PlanInfoCell: Identifiable {
     associatedtype PlanType: Plan
 
     func configure(for item: PlanType)

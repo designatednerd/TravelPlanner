@@ -12,21 +12,26 @@ import UIKit
 class TripListViewController: UIViewController {
 
     var coordinator: TripCoordinator?
-    var trips: [Trip]?
+    lazy var dataSource: TripListDataSource = {
+        return TripListDataSource(tableView: self.tableView)
+    }()
 
     @IBOutlet private var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "My Trips"
+        
+        self.tableView.dataSource = self.dataSource
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        trips = CoreDataManager.shared.mainContext.dns_allOf(Trip.self)
         tableView.reloadData()
     }
+    
+    // MARK: - State Restoration / Siri Shortcuts
     
     override func restoreUserActivityState(_ activity: NSUserActivity) {
         super.restoreUserActivityState(activity)
@@ -59,7 +64,6 @@ class TripListViewController: UIViewController {
         }
     }
 
-
     @IBAction func addTrip() {
         self.coordinator?.addNewTrip()
     }
@@ -72,37 +76,10 @@ extension TripListViewController: StoryboardHosted {
     }
 }
 
-extension TripListViewController: UITableViewDataSource {
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips?.count ?? 0
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let trip = self.trips?[indexPath.row] else {
-            return UITableViewCell()
-        }
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TripCell", for: indexPath)
-        cell.textLabel?.text = trip.name ?? "(Unnamed)"
-        cell.detailTextLabel?.text = trip.formattedTripInterval
-
-        return cell
-    }
-}
-
 extension TripListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let trip = self.trips?[indexPath.row] else {
-            assertionFailure("Selected nonexistent trip!")
-            return
-        }
-
+        let trip = self.dataSource.data(for: indexPath)
         coordinator?.viewTrip(trip)
     }
 }

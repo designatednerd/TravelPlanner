@@ -9,20 +9,24 @@
 import UIKit
 
 public typealias IdentifiableCell = UITableViewCell & Identifiable
+public typealias NibLoadableCell = UITableViewCell & NibLoadable
 
-open class TableViewDataSource<Item, Cell: IdentifiableCell>: NSObject, UITableViewDataSource, DataSource {
+open class TableViewDataSource<Item, Cell: UITableViewCell>: NSObject, UITableViewDataSource, DataSource {
 
-    typealias DataType = Item
-    typealias SectionType = Any
+    public typealias DataType = Item
     
     private(set) weak var tableView: UITableView?
     private(set) var items: [Item]
     
     init(items: [Item], tableView: UITableView) {
+        if (Cell.self is NibLoadable.Type) {
+            (Cell.self as! NibLoadableCell.Type).register(in: tableView)
+        } else {
+            tableView.register(Cell.self, forCellReuseIdentifier: Cell.identifier)
+        }
+        
         self.tableView = tableView
         self.items = items
-        
-        tableView.register(Cell.self, forCellReuseIdentifier: Cell.identifier)
     }
     
     // MARK: - Data Source Protocol

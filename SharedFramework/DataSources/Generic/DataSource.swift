@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol DataSource {
+public protocol DataSource {
     associatedtype DataType
-    associatedtype SectionType
     
     func data(for section: Int) -> [DataType]
     
@@ -25,15 +24,15 @@ protocol DataSource {
 
 extension DataSource {
     
-    func sectionExists(at sectionIndex: Int) -> Bool {
+    public func sectionExists(at sectionIndex: Int) -> Bool {
         return self.numberOfSections() > sectionIndex
     }
     
-    func rowExists(at rowIndex: Int, for items: [DataType]) -> Bool {
+    public func rowExists(at rowIndex: Int, for items: [DataType]) -> Bool {
         return items.indices.contains(rowIndex)
     }
     
-    func indexExists(at indexPath: IndexPath) -> Bool {
+    public func indexExists(at indexPath: IndexPath) -> Bool {
         guard sectionExists(at: indexPath.section) else {
             return false
         }
@@ -41,30 +40,17 @@ extension DataSource {
         return rowExists(at: indexPath.row, for: self.data(for: indexPath.section))
     }
     
-    func isSectionEmpty(_ section: Int) -> Bool {
+    public func isSectionEmpty(_ section: Int) -> Bool {
         return self.data(for: section).isEmpty
     }
     
-    func numberOfItems(for section: Int) -> Int {
+    public func numberOfItems(for section: Int) -> Int {
         return self.data(for: section).count
     }
     
-    func data(for indexPath: IndexPath) -> DataType {
+    public func data(for indexPath: IndexPath) -> DataType {
         return self.data(for: indexPath.section)[indexPath.row]
     }
 }
 
-extension DataSource where SectionType: CaseIterable {
-    
-    func numberOfSections() -> Int {
-        return SectionType.allCases.count
-    }
-    
-    func sectionData(for indexPath: IndexPath) -> SectionType  {
-        guard sectionExists(at: indexPath.section) else {
-            fatalError("Section does not exist!")
-        }
-        
-        return SectionType.dns_forSection(in: indexPath)
-    }
-}
+

@@ -6,14 +6,13 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
-class TripInfoCell: UITableViewCell {
+public class TripInfoCell: UITableViewCell {
 
-    @IBOutlet private var destinationLabel: UILabel!
-    @IBOutlet private var startDateLabel: UILabel!
-    @IBOutlet private var endDateLabel: UILabel!
+    @IBOutlet public var destinationLabel: UILabel!
+    @IBOutlet public var startDateLabel: UILabel!
+    @IBOutlet public var endDateLabel: UILabel!
 
     func configure(for trip: Trip) {
         self.destinationLabel.text = trip.destination ?? "(Unknown)"
@@ -22,4 +21,4 @@ class TripInfoCell: UITableViewCell {
     }
 }
 
-extension TripInfoCell: Identifiable {}
+extension TripInfoCell: NibLoadable {}

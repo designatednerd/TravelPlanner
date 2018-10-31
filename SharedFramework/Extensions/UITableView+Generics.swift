@@ -10,7 +10,7 @@ import UIKit
 
 public extension UITableView {
 
-    public func dequeue<T>(_ type: T.Type, at indexPath: IndexPath) -> T where T: UITableViewCell, T: Identifiable {
+    public func dequeue<T: UITableViewCell>(_ type: T.Type, at indexPath: IndexPath) -> T {
         guard let cell = self.dequeueReusableCell(withIdentifier: T.identifier, for: indexPath) as? T else {
             fatalError("Couldn't get cell of proper type!")
         }
@@ -18,3 +18,6 @@ public extension UITableView {
         return cell 
     }
 }
+
+extension UITableViewCell: Identifiable {}
+

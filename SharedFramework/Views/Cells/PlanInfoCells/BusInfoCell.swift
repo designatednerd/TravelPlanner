@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SharedFramework
 
 class BusInfoCell: UITableViewCell {
 

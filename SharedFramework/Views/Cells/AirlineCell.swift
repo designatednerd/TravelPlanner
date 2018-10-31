@@ -8,8 +8,4 @@
 
 import UIKit
 
-public class AirlineCell: UITableViewCell {
-    
-}
-
-extension AirlineCell: Identifiable {}
+public class AirlineCell: UITableViewCell {}

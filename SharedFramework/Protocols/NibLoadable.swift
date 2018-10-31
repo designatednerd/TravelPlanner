@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SharedFramework
 
-protocol NibLoadable {
+public protocol NibLoadable {
 
     static var bundle: Bundle { get }
     static var nibName: String { get }
@@ -17,19 +16,15 @@ protocol NibLoadable {
 
 extension NibLoadable {
 
-    static var nibName: String {
+    public static var nibName: String {
         return String(describing: self)
     }
 
-    static var bundle: Bundle {
-        return Bundle.main
-    }
-
-    static var nib: UINib {
+    public static var nib: UINib {
         return UINib(nibName: self.nibName, bundle: self.bundle)
     }
 
-    static var fromNib: Self {
+    public static var fromNib: Self {
         guard let nibContents = self.bundle.loadNibNamed(self.nibName, owner: nil) else {
             fatalError("Could not load \(self.nibName) from bundle.")
         }
@@ -42,9 +37,13 @@ extension NibLoadable {
     }
 }
 
-extension NibLoadable where Self: UITableViewCell, Self: Identifiable {
+extension NibLoadable where Self: UITableViewCell {
 
-    static func register(in tableView: UITableView) {
+    public static func register(in tableView: UITableView) {
         tableView.register(self.nib, forCellReuseIdentifier: self.identifier)
+    }
+    
+    public static var bundle: Bundle {
+        return Bundle(for: Self.self)
     }
 }

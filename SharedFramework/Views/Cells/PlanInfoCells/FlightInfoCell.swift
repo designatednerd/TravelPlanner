@@ -6,7 +6,6 @@
 //  Copyright © 2018 Designated Nerd Software. All rights reserved.
 //
 
-import SharedFramework
 import UIKit
 
 class FlightInfoCell: UITableViewCell {

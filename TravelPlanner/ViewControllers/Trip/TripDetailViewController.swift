@@ -17,16 +17,17 @@ class TripDetailViewController: UIViewController {
             self.title = self.trip.name
         }
     }
+    
+    private lazy var dataSource: TripDetailDataSource = {
+        return TripDetailDataSource(trip: self.trip, tableView: self.tableView)
+    }()
 
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        FlightInfoCell.register(in: self.tableView)
-        BusInfoCell.register(in: self.tableView)
-        HotelInfoCell.register(in: self.tableView)
-        TrainInfoCell.register(in: self.tableView)
+        
+        self.tableView.dataSource = self.dataSource
 
         self.navigationItem.rightBarButtonItems = [
                 UIBarButtonItem(barButtonSystemItem: .edit,
@@ -84,60 +85,14 @@ extension TripDetailViewController: StoryboardHosted {
     }
 }
 
-extension TripDetailViewController: UITableViewDataSource {
-
-    enum TripDetailSection: Int, CaseIterable {
-        case tripInfo
-        case plans
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return TripDetailSection.allCases.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch TripDetailSection.dns_forIndex(section) {
-        case .tripInfo:
-            return 1
-        case .plans:
-            return self.trip.planCount
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch TripDetailSection.dns_forSection(in: indexPath) {
-        case .tripInfo:
-            let cell = tableView.dequeueReusableCell(withIdentifier: TripInfoCell.identifier) as! TripInfoCell
-            cell.configure(for: self.trip)
-            return cell
-        case .plans:
-            let plan = self.trip.plansByDate[indexPath.row]
-
-            if let flight = plan as? Flight {
-               return FlightInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: flight)
-            } else if let bus = plan as? Bus {
-                return BusInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: bus)
-            } else if let hotel = plan as? Hotel {
-                return HotelInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: hotel)
-            } else if let train = plan as? Train {
-                return TrainInfoCell.dequeueAndConfigure(in: tableView, at: indexPath, for: train)
-            } else {
-                fatalError("Unhandled plan type: \(type(of: plan))")
-            }
-        }
-    }
-}
-
 extension TripDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch TripDetailSection.dns_forSection(in: indexPath) {
-        case .tripInfo:
-            // Nothing to do here.
-            break
-        case .plans:
-            let plan = self.trip.plansByDate[indexPath.row]
-            self.coordinator?.editPlan(plan)
+        guard let plan = self.dataSource.item(ofType: Plan.self, at: indexPath) else {
+            // Not a plan that was selected
+            return
         }
+        
+        self.coordinator?.editPlan(plan)
     }
 }
