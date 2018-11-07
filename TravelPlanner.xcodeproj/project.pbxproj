@@ -27,6 +27,7 @@
 		33B254E32146A96500364AE1 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B254E22146A96500364AE1 /* AppStoryboard.swift */; };
 		33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B254E42146B1B600364AE1 /* FrameworkPersistentCoordinator.swift */; };
 		33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B255062146CF5500364AE1 /* Flight+Extensions.swift */; };
+		9B11215D2192D1B100465AE2 /* NSPredicate+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
 		9B47B54421872FCF00140CA4 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B54021872FCF00140CA4 /* Bus.storyboard */; };
@@ -181,6 +182,7 @@
 		33B2550E214700E100364AE1 /* BusInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusInfoCell.xib; sourceTree = "<group>"; };
 		33B255102147011000364AE1 /* HotelInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelInfoCell.xib; sourceTree = "<group>"; };
 		33B255122147013700364AE1 /* TrainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainInfoCell.xib; sourceTree = "<group>"; };
+		9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+KeyPath.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B54121872FCF00140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Bus.storyboard; sourceTree = SOURCE_ROOT; };
@@ -347,6 +349,7 @@
 				33B254E42146B1B600364AE1 /* FrameworkPersistentCoordinator.swift */,
 				33B254A62146902D00364AE1 /* NSManagedObject+Convenience.swift */,
 				33B254A421468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift */,
+				9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */,
 				33B255082146D67A00364AE1 /* UITableView+Generics.swift */,
 				9B47B5562187358700140CA4 /* UITextField+Validation.swift */,
 			);
@@ -737,6 +740,7 @@
 				9B47B5572187358700140CA4 /* UITextField+Validation.swift in Sources */,
 				9B47B558218735E100140CA4 /* CaseIterable+TableViewHelping.swift in Sources */,
 				33B254A521468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift in Sources */,
+				9B11215D2192D1B100465AE2 /* NSPredicate+KeyPath.swift in Sources */,
 				33B2549F21468B0F00364AE1 /* CoreDataManager.swift in Sources */,
 				9B6C1F0C21490D930006C217 /* CSVImporter.swift in Sources */,
 				9B47B5492187309000140CA4 /* BundleHelper.swift in Sources */,

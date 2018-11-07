@@ -54,8 +54,7 @@ class TripListViewController: UIViewController {
                 return
             }
             
-            let predicate = NSPredicate(format: "%K == %@", "name", tripName)
-            
+            let predicate = NSPredicate(keyPath: \Trip.name, value: tripName)
             guard let trip = CoreDataManager.shared.mainContext.dns_fetch(Trip.self, with: predicate).first else {
                 return
             }
