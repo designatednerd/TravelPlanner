@@ -33,6 +33,7 @@
 		9B11215D2192D1B100465AE2 /* NSPredicate+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */; };
 		9B11215F2192E76F00465AE2 /* IntentDonor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11215E2192E76F00465AE2 /* IntentDonor.swift */; };
 		9B1121612192E7C000465AE2 /* AppIntentDonor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121602192E7C000465AE2 /* AppIntentDonor.swift */; };
+		9B1121632192F2A200465AE2 /* AppIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121622192F2A200465AE2 /* AppIntentHandler.swift */; };
 		9B1121652192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
@@ -193,6 +194,7 @@
 		9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+KeyPath.swift"; sourceTree = "<group>"; };
 		9B11215E2192E76F00465AE2 /* IntentDonor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentDonor.swift; sourceTree = "<group>"; };
 		9B1121602192E7C000465AE2 /* AppIntentDonor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentDonor.swift; sourceTree = "<group>"; };
+		9B1121622192F2A200465AE2 /* AppIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentHandler.swift; sourceTree = "<group>"; };
 		9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+IntentAndResponseTranslations.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
@@ -296,6 +298,7 @@
 			children = (
 				9BB566CE218A080700C1359F /* TravelPlanner.entitlements */,
 				33B2547621468A1C00364AE1 /* AppDelegate.swift */,
+				9B1121622192F2A200465AE2 /* AppIntentHandler.swift */,
 				9B1121602192E7C000465AE2 /* AppIntentDonor.swift */,
 				9B5887F82149B8FC00A27881 /* UserActivities.swift */,
 				33B254EC2146BAF200364AE1 /* Coordinators */,
@@ -741,6 +744,7 @@
 				33B2547921468A1C00364AE1 /* TripListViewController.swift in Sources */,
 				33B254B421469E5000364AE1 /* TripEditViewController.swift in Sources */,
 				9B5887F92149B8FC00A27881 /* UserActivities.swift in Sources */,
+				9B1121632192F2A200465AE2 /* AppIntentHandler.swift in Sources */,
 				9B1121612192E7C000465AE2 /* AppIntentDonor.swift in Sources */,
 				33B254A321468D7E00364AE1 /* TripDetailViewController.swift in Sources */,
 				33B254A121468CC700364AE1 /* TripCoordinator.swift in Sources */,

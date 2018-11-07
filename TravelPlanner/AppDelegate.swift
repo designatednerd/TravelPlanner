@@ -57,11 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if let intent = userActivity.interaction?.intent {
+            guard AppIntentHandler.isHandled(intent: intent) else {
+                assertionFailure("Trying to handle unhandled intent type!")
                 return false
             }
             
-            self.coordinator.editTrip(trip)
-            return true
+            return AppIntentHandler.handle(intent: intent, with: self.coordinator)
         }
         
         guard let activityType = UserActivityType(rawValue: userActivity.activityType) else {
