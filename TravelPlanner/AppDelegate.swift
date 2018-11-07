@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let coordinator = TripCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         self.importAirlinesIfNeeded()
         self.importAirportsIfNeeded()
+        
+        self.coordinator.intentDonor = AppIntentDonor()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = self.coordinator.navController

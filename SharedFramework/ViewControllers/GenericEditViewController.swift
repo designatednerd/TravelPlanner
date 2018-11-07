@@ -35,6 +35,8 @@ class GenericEditViewController: UIViewController {
     
     var editPlanViewController: EditPlanViewController?
     
+    var intentDonor: IntentDonor?
+    
     @IBOutlet private var embeddedView: UIView!
     
     override func viewDidLoad() {
@@ -82,6 +84,7 @@ class GenericEditViewController: UIViewController {
             return
         }
         
+        self.intentDonor?.donateDepartureAndArrivalIntents(for: self.editPlanViewController?.plan)
         vc.savePressed()
     }
 }

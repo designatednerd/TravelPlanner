@@ -21,6 +21,7 @@ class TripCoordinator {
     }()
 
     var editCoordinator: PlanEditCoordinator?
+    var intentDonor: IntentDonor?
     
     // MARK: - Public actions
 
@@ -60,7 +61,7 @@ class TripCoordinator {
     }
 
     private func showEditController<T: Plan>(for item: T) {
-        self.editCoordinator = PlanEditCoordinator(plan: item)
+        self.editCoordinator = PlanEditCoordinator(plan: item, intentDonor: self.intentDonor)
         self.navController.present(self.editCoordinator!.navController, animated: true)
     }
 
