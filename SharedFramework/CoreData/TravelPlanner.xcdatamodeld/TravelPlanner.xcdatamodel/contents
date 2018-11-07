@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.12.1" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Airline" representedClassName="Airline" syncable="YES" codeGenerationType="class">
         <attribute name="callSign" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,8 +44,9 @@
         <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="plans" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <entity name="Train" representedClassName="Train" parentEntity="Plan" syncable="YES" codeGenerationType="class">
-        <attribute name="arrivalTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="departureTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
@@ -55,13 +56,13 @@
         <relationship name="plans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plan" inverseName="trip" inverseEntity="Plan" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Airline" positionX="-27" positionY="81" width="128" height="150"/>
+        <element name="Airport" positionX="-18" positionY="90" width="128" height="180"/>
         <element name="Bus" positionX="-18" positionY="27" width="128" height="90"/>
         <element name="Flight" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="Hotel" positionX="0" positionY="45" width="128" height="120"/>
         <element name="Plan" positionX="9" positionY="126" width="128" height="90"/>
-        <element name="Train" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Train" positionX="-36" positionY="9" width="128" height="90"/>
         <element name="Trip" positionX="-63" positionY="-18" width="128" height="120"/>
-        <element name="Airline" positionX="-27" positionY="81" width="128" height="150"/>
-        <element name="Airport" positionX="-18" positionY="90" width="128" height="180"/>
     </elements>
 </model>

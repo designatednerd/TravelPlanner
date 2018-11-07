@@ -22,7 +22,8 @@
 	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>EditTripIntent</string>
+		<string>ArrivalTimeIntent</string>
+		<string>DepartureTimeIntent</string>
 		<string>com.designatednerd.TravelPlanner.TripView</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

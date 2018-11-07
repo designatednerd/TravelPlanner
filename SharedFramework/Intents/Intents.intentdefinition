@@ -7,11 +7,11 @@
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.0</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>17G65</string>
+	<string>18A391</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>10L232m</string>
+	<string>10B61</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>10.0</string>
+	<string>10.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -20,59 +20,44 @@
 			<key>INIntentDefaultImageName</key>
 			<string>trip</string>
 			<key>INIntentDescription</key>
-			<string>Opens Editor for trip with the provided information</string>
+			<string>Views departure time to a specific destination</string>
 			<key>INIntentDescriptionID</key>
-			<string>JOEkni</string>
+			<string>Pr3DOl</string>
 			<key>INIntentLastParameterTag</key>
-			<integer>4</integer>
+			<integer>2</integer>
 			<key>INIntentName</key>
-			<string>EditTrip</string>
+			<string>DepartureTime</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
 				<key>destination</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
-					<false/>
+					<true/>
 					<key>INIntentParameterCombinationSubtitle</key>
 					<string></string>
 					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>836S75</string>
+					<string>zUNnmz</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
+					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Edit trip to ${destination}</string>
+					<string>When am I leaving for ${destination}?</string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>iqxVx4</string>
+					<string>AsxbUH</string>
 				</dict>
-				<key>name</key>
+				<key>origin,destination</key>
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<false/>
 					<key>INIntentParameterCombinationSubtitle</key>
 					<string></string>
 					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>iHFwHQ</string>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<false/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Edit trip "${name} "</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>5KNg26</string>
-				</dict>
-				<key>name,destination</key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string></string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>th9993</string>
+					<string>CA2yOH</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 					<key>INIntentParameterCombinationTitle</key>
-					<string>Edit trip to ${destination} "${name}"</string>
+					<string>When am I leaving ${origin} for ${destination}?</string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>oqOs7q</string>
+					<string>jPvxzh</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -81,11 +66,11 @@
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterName</key>
-					<string>name</string>
+					<string>destination</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
 					<false/>
 					<key>INIntentParameterTag</key>
-					<integer>2</integer>
+					<integer>1</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>
@@ -93,11 +78,11 @@
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>2</integer>
 					<key>INIntentParameterName</key>
-					<string>destination</string>
+					<string>origin</string>
 					<key>INIntentParameterSupportsMultipleValues</key>
 					<false/>
 					<key>INIntentParameterTag</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>INIntentParameterType</key>
 					<string>String</string>
 				</dict>
@@ -110,7 +95,7 @@
 						<key>INIntentResponseCodeFormatString</key>
 						<string></string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>YVWwxn</string>
+						<string>y5B8qo</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
 						<key>INIntentResponseCodeSuccess</key>
@@ -118,9 +103,9 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>OK, here's your new trip, "${name}", to ${destination}.</string>
+						<string>You're leaving ${origin} by ${method} to go to ${destination} on ${date} at ${time} local time. </string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>b2YK6L</string>
+						<string>j7yLXn</string>
 						<key>INIntentResponseCodeName</key>
 						<string>success</string>
 						<key>INIntentResponseCodeSuccess</key>
@@ -128,34 +113,34 @@
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>OK, here's your new trip, "${name}".</string>
+						<string>Sorry, I can't find that without a destination.</string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>euydKG</string>
+						<string>o1IcqR</string>
 						<key>INIntentResponseCodeName</key>
-						<string>successNameOnly</string>
+						<string>failureNoDestination</string>
 						<key>INIntentResponseCodeSuccess</key>
-						<true/>
+						<false/>
 					</dict>
 					<dict>
 						<key>INIntentResponseCodeFormatString</key>
-						<string>OK, here's your new trip to ${destination}.</string>
+						<string>Sorry, I can't find upcoming plans to go to ${destination}</string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>bNf7UC</string>
+						<string>V5hCtH</string>
 						<key>INIntentResponseCodeName</key>
-						<string>successDestinationOnly</string>
+						<string>failureNoFuturePlansToDestination</string>
 						<key>INIntentResponseCodeSuccess</key>
-						<true/>
+						<false/>
 					</dict>
 				</array>
 				<key>INIntentResponseLastParameterTag</key>
-				<integer>2</integer>
+				<integer>5</integer>
 				<key>INIntentResponseParameters</key>
 				<array>
 					<dict>
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>1</integer>
 						<key>INIntentResponseParameterName</key>
-						<string>name</string>
+						<string>destination</string>
 						<key>INIntentResponseParameterSupportsMultipleValues</key>
 						<false/>
 						<key>INIntentResponseParameterTag</key>
@@ -167,11 +152,47 @@
 						<key>INIntentResponseParameterDisplayPriority</key>
 						<integer>2</integer>
 						<key>INIntentResponseParameterName</key>
-						<string>destination</string>
+						<string>date</string>
 						<key>INIntentResponseParameterSupportsMultipleValues</key>
 						<false/>
 						<key>INIntentResponseParameterTag</key>
 						<integer>2</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>time</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>4</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>origin</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>4</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>5</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>method</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>5</integer>
 						<key>INIntentResponseParameterType</key>
 						<string>String</string>
 					</dict>
@@ -180,15 +201,210 @@
 			<key>INIntentRestrictions</key>
 			<integer>0</integer>
 			<key>INIntentTitle</key>
-			<string>Edit Trip</string>
+			<string>View Departure Time</string>
 			<key>INIntentTitleID</key>
-			<string>ao9oqS</string>
+			<string>15pB0G</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentUserConfirmationRequired</key>
 			<false/>
 			<key>INIntentVerb</key>
-			<string>Open</string>
+			<string>View</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>View your arrival time at a specific destination</string>
+			<key>INIntentDescriptionID</key>
+			<string>SuZ8g6</string>
+			<key>INIntentLastParameterTag</key>
+			<integer>2</integer>
+			<key>INIntentName</key>
+			<string>ArrivalTime</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key>destination</key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string></string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>qL76ET</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>When do I arrive in ${destination}?</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>HrWw3f</string>
+				</dict>
+				<key>origin,destination</key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<false/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string></string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>p6NpHS</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>When do I arrive in ${destination} from ${origin}?</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>ekHgh6</string>
+				</dict>
+			</dict>
+			<key>INIntentParameters</key>
+			<array>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterName</key>
+					<string>destination</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>1</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+				<dict>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>2</integer>
+					<key>INIntentParameterName</key>
+					<string>origin</string>
+					<key>INIntentParameterSupportsMultipleValues</key>
+					<false/>
+					<key>INIntentParameterTag</key>
+					<integer>2</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+			</array>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string></string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>W10nRa</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>You arrive in ${destination} by ${method} from ${origin} at ${time} local time on ${date}.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>YvQb7r</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Sorry, I can't find that without a destination.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>X5KaCY</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failureNoDestination</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Sorry, I can't find upcoming plans to go to ${destination}</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>1pKTox</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failureNoFuturePlansToDestination</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>5</integer>
+				<key>INIntentResponseParameters</key>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>destination</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>origin</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>2</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>date</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>3</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>4</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>time</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>4</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>5</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>method</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>5</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentRestrictions</key>
+			<integer>0</integer>
+			<key>INIntentTitle</key>
+			<string>View Arrival Time</string>
+			<key>INIntentTitleID</key>
+			<string>57bUsq</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentUserConfirmationRequired</key>
+			<false/>
+			<key>INIntentVerb</key>
+			<string>View</string>
 		</dict>
 	</array>
 </dict>

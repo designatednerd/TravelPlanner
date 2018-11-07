@@ -27,7 +27,11 @@
 		33B254E32146A96500364AE1 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B254E22146A96500364AE1 /* AppStoryboard.swift */; };
 		33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B254E42146B1B600364AE1 /* FrameworkPersistentCoordinator.swift */; };
 		33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B255062146CF5500364AE1 /* Flight+Extensions.swift */; };
+		9B1121572192BAE900465AE2 /* ArrivalTimeIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121562192BAE900465AE2 /* ArrivalTimeIntentHandler.swift */; };
+		9B1121592192BAFD00465AE2 /* DepartureTimeIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121582192BAFD00465AE2 /* DepartureTimeIntentHandler.swift */; };
+		9B11215B2192C03F00465AE2 /* Plan+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11215A2192C03F00465AE2 /* Plan+Extensions.swift */; };
 		9B11215D2192D1B100465AE2 /* NSPredicate+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */; };
+		9B1121652192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
 		9B47B54421872FCF00140CA4 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B54021872FCF00140CA4 /* Bus.storyboard */; };
@@ -55,7 +59,6 @@
 		9B5888002149C6E700A27881 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */; };
 		9B58880A2149F82C00A27881 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B5888092149F82C00A27881 /* Intents.intentdefinition */; settings = {ATTRIBUTES = (no_codegen, ); }; };
 		9B58880B2149F82C00A27881 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9B5888092149F82C00A27881 /* Intents.intentdefinition */; };
-		9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */; };
 		9B588816214A6C9E00A27881 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B588815214A6C9E00A27881 /* IntentHandler.swift */; };
 		9B58881A214A6C9E00A27881 /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B588813214A6C9E00A27881 /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B588821214A6CB800A27881 /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B2548D21468A8100364AE1 /* SharedFramework.framework */; };
@@ -182,7 +185,11 @@
 		33B2550E214700E100364AE1 /* BusInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusInfoCell.xib; sourceTree = "<group>"; };
 		33B255102147011000364AE1 /* HotelInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelInfoCell.xib; sourceTree = "<group>"; };
 		33B255122147013700364AE1 /* TrainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainInfoCell.xib; sourceTree = "<group>"; };
+		9B1121562192BAE900465AE2 /* ArrivalTimeIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimeIntentHandler.swift; sourceTree = "<group>"; };
+		9B1121582192BAFD00465AE2 /* DepartureTimeIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureTimeIntentHandler.swift; sourceTree = "<group>"; };
+		9B11215A2192C03F00465AE2 /* Plan+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+Extensions.swift"; sourceTree = "<group>"; };
 		9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+KeyPath.swift"; sourceTree = "<group>"; };
+		9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+IntentAndResponseTranslations.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B54121872FCF00140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Bus.storyboard; sourceTree = SOURCE_ROOT; };
@@ -199,7 +206,6 @@
 		9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9B5888092149F82C00A27881 /* Intents.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripIntentHandler.swift; sourceTree = "<group>"; };
 		9B588813214A6C9E00A27881 /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B588815214A6C9E00A27881 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		9B588817214A6C9E00A27881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
 				33B255062146CF5500364AE1 /* Flight+Extensions.swift */,
 				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
+				9B11215A2192C03F00465AE2 /* Plan+Extensions.swift */,
+				9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */,
 			);
 			path = ManagedObjectExtensions;
 			sourceTree = "<group>";
@@ -473,7 +481,8 @@
 			isa = PBXGroup;
 			children = (
 				9B5888092149F82C00A27881 /* Intents.intentdefinition */,
-				9B58880C2149F8F600A27881 /* EditTripIntentHandler.swift */,
+				9B1121562192BAE900465AE2 /* ArrivalTimeIntentHandler.swift */,
+				9B1121582192BAFD00465AE2 /* DepartureTimeIntentHandler.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -734,9 +743,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1121572192BAE900465AE2 /* ArrivalTimeIntentHandler.swift in Sources */,
 				9BB566C42189E63200C1359F /* SectionedTableViewDataSource.swift in Sources */,
 				9B47B550218733CB00140CA4 /* AirportSelectionViewController.swift in Sources */,
 				9B58880B2149F82C00A27881 /* Intents.intentdefinition in Sources */,
+				9B1121592192BAFD00465AE2 /* DepartureTimeIntentHandler.swift in Sources */,
 				9B47B5572187358700140CA4 /* UITextField+Validation.swift in Sources */,
 				9B47B558218735E100140CA4 /* CaseIterable+TableViewHelping.swift in Sources */,
 				33B254A521468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift in Sources */,
@@ -747,6 +758,7 @@
 				9BB566BF2189E28700C1359F /* BusInfoCell.swift in Sources */,
 				9BB566B82189E0CB00C1359F /* TripDetailDataSource.swift in Sources */,
 				9B47B5472187301300140CA4 /* Storyboard.swift in Sources */,
+				9B11215B2192C03F00465AE2 /* Plan+Extensions.swift in Sources */,
 				9B767DDF218763350046BE3F /* DataSource.swift in Sources */,
 				9BB566C02189E29B00C1359F /* TripInfoCell.swift in Sources */,
 				9B47B54F218733CB00140CA4 /* AirlineSelectionViewController.swift in Sources */,
@@ -755,12 +767,12 @@
 				9B47B54C218733CB00140CA4 /* FlightEditViewController.swift in Sources */,
 				9B767DF021885F930046BE3F /* AirportCell.swift in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
-				9B58880E2149F8F600A27881 /* EditTripIntentHandler.swift in Sources */,
 				9B767DE1218768910046BE3F /* SearchableTableViewDataSource.swift in Sources */,
 				9B47B5512187347900140CA4 /* FlightCoordinator.swift in Sources */,
 				33B254B221469B8C00364AE1 /* Formatters.swift in Sources */,
 				9B47B56E218744AB00140CA4 /* PlanEditCoordinator.swift in Sources */,
 				9B767DE821877C710046BE3F /* TableViewDataSource.swift in Sources */,
+				9B1121652192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift in Sources */,
 				9BB566BC2189E28700C1359F /* HotelInfoCell.swift in Sources */,
 				9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */,
 				9BB566BB2189E28700C1359F /* PlanInfoCell.swift in Sources */,

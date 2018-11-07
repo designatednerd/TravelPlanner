@@ -12,8 +12,10 @@ import SharedFramework
 class IntentHandler: INExtension {
     
     override func handler(for intent: INIntent) -> Any {
-        if intent is EditTripIntent {
-            return EditTripIntentHandler()
+        if intent is ArrivalTimeIntent {
+            return ArrivalTimeIntentHandler()
+        } else if intent is DepartureTimeIntent {
+            return DepartureTimeIntentHandler()
         }
         
         return self

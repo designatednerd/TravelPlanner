@@ -44,9 +44,10 @@ public extension NSManagedObjectContext {
         }
     }
     
-    public func dns_fetch<T: NSManagedObject>(_ type: T.Type, with predicate: NSPredicate) -> [T] {
+    public func dns_fetch<T: NSManagedObject>(_ type: T.Type, with predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil) -> [T] {
         let request = T.fetchRequest()
         request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
         do {
             let result = try self.fetch(request)
             return result as? [T] ?? []
