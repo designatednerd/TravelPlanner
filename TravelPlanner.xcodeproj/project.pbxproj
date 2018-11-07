@@ -648,6 +648,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Siri = {
+								enabled = 1;
+							};
 						};
 					};
 					33B2548C21468A8100364AE1 = {
