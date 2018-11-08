@@ -91,19 +91,8 @@ class GenericEditViewController: UIViewController {
         }
         
         // NOTE: These must be in this order, because of course they must.
-        self.addChild(viewController)
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        self.embeddedView.addSubview(viewController.view)
-        viewController.didMove(toParent: self)
-        
+        self.dns_addChild(viewController, in: self.embeddedView)
         self.updateBarButtonItems(for: viewController)
-        
-        self.embeddedView.addConstraints([
-            viewController.view.topAnchor.constraint(equalTo: self.embeddedView.topAnchor),
-            viewController.view.leftAnchor.constraint(equalTo: self.embeddedView.leftAnchor),
-            viewController.view.bottomAnchor.constraint(equalTo: self.embeddedView.bottomAnchor),
-            viewController.view.rightAnchor.constraint(equalTo: self.embeddedView.rightAnchor)
-        ])
     }
     
     @objc func edit() {

@@ -40,6 +40,7 @@
 		9B11216B21932D8700465AE2 /* Hotel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */; };
 		9B11216F2193319A00465AE2 /* DateTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216E2193319A00465AE2 /* DateTimePickerView.swift */; };
 		9B112171219331AB00465AE2 /* DateTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B112170219331AB00465AE2 /* DateTimePickerView.xib */; };
+		9B20F00B21947F7D00D5E46E /* UIViewController+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
 		9B47B54421872FCF00140CA4 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B54021872FCF00140CA4 /* Bus.storyboard */; };
@@ -207,6 +208,7 @@
 		9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hotel+Extensions.swift"; sourceTree = "<group>"; };
 		9B11216E2193319A00465AE2 /* DateTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerView.swift; sourceTree = "<group>"; };
 		9B112170219331AB00465AE2 /* DateTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTimePickerView.xib; sourceTree = "<group>"; };
+		9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B54121872FCF00140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Bus.storyboard; sourceTree = SOURCE_ROOT; };
@@ -379,6 +381,7 @@
 				33B255082146D67A00364AE1 /* UITableView+Generics.swift */,
 				9B47B5562187358700140CA4 /* UITextField+Validation.swift */,
 				9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */,
+				9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				9B112167219310A400465AE2 /* CustomButton.swift in Sources */,
 				33B254A72146902D00364AE1 /* NSManagedObject+Convenience.swift in Sources */,
 				9BB566BE2189E28700C1359F /* TrainInfoCell.swift in Sources */,
+				9B20F00B21947F7D00D5E46E /* UIViewController+Children.swift in Sources */,
 				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
 				9B11215F2192E76F00465AE2 /* IntentDonor.swift in Sources */,
 				9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */,
