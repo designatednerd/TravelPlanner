@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,18 +30,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JYd-KR-LPq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AAD-Ma-Un3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DXr-0V-2ia">
-                            <connections>
-                                <action selector="cancel" destination="Bch-h0-CQ3" id="ivd-BP-9Dx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hu2-wM-2Tp">
-                            <connections>
-                                <action selector="save" destination="Bch-h0-CQ3" id="Fif-wi-KYX"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="AAD-Ma-Un3"/>
                     <connections>
                         <outlet property="embeddedView" destination="JJ4-Vb-1kV" id="YPB-Ms-bip"/>
                     </connections>

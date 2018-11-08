@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,82 +20,68 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-Z4-8kJ">
                                 <rect key="frame" x="20" y="40" width="335" height="220"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXj-Iy-hh4">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQS-5k-IQX" customClass="SectionTitleButton" customModule="SharedFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                        <state key="normal" title="Select Airline"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledTitle" value="Airline"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="enabledTitle" value="Select Airline"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="selectAirline" destination="Bch-h0-CQ3" eventType="touchUpInside" id="tuC-Lh-qeH"/>
+                                            <action selector="selectAirline" destination="Bch-h0-CQ3" eventType="touchUpInside" id="gRG-ql-z89"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3d-RC-JOb">
+                                        <rect key="frame" x="0.0" y="34" width="335" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flight number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyZ-5f-m0W">
                                         <rect key="frame" x="0.0" y="38" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="Bch-h0-CQ3" id="NS6-WM-o3v"/>
-                                        </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRw-lT-7bk">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-fX-Jx1" customClass="SectionTitleButton" customModule="SharedFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="335" height="30"/>
-                                        <state key="normal" title="Select Departure Airport"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledTitle" value="Departure Info"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="enabledTitle" value="Select Departure Airport"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="selectDepartureAirport" destination="Bch-h0-CQ3" eventType="touchUpInside" id="2HO-1F-Vkn"/>
+                                            <action selector="selectDepartureAirport" destination="Bch-h0-CQ3" eventType="touchUpInside" id="7zk-sE-S62"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-re-r4V">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDq-8k-JGv">
+                                        <rect key="frame" x="0.0" y="110" width="335" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JSn-xi-vfb" customClass="DateTimePickerContainer" customModule="SharedFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="114" width="335" height="30"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departure date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AX-CU-DEN">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Bch-h0-CQ3" id="SdJ-FN-QbX"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Departure Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="281-jz-xNl">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Bch-h0-CQ3" id="L1e-UH-1PR"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrp-q0-gwT">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-hz-7Tx" customClass="SectionTitleButton" customModule="SharedFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="152" width="335" height="30"/>
-                                        <state key="normal" title="Select Arrival Airport"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="disabledTitle" value="Arrival Info"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="enabledTitle" value="Select Arrival Airport"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="selectArrivalAirport" destination="Bch-h0-CQ3" eventType="touchUpInside" id="amm-qf-pj1"/>
+                                            <action selector="selectArrivalAirport" destination="Bch-h0-CQ3" eventType="touchUpInside" id="aFS-an-D49"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yFB-sx-AIN">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quE-9W-nXw">
+                                        <rect key="frame" x="0.0" y="186" width="335" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-Rx-5ME" customClass="DateTimePickerContainer" customModule="SharedFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="190" width="335" height="30"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrival Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="snv-11-ndr">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Bch-h0-CQ3" id="QQQ-yM-Jxp"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrival Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbI-BI-MbR">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Bch-h0-CQ3" id="slP-Cz-5oz"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -112,13 +98,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="hu2-wM-2Tp"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="airlineButton" destination="FXj-Iy-hh4" id="AaJ-St-Lfr"/>
-                        <outlet property="arrivalAirportButton" destination="nrp-q0-gwT" id="Dgo-In-ZA9"/>
-                        <outlet property="arrivalDateTextField" destination="snv-11-ndr" id="JCk-1M-2fV"/>
-                        <outlet property="arrivalTimeTextField" destination="KbI-BI-MbR" id="NM1-1p-V2t"/>
-                        <outlet property="departureAirportButton" destination="aRw-lT-7bk" id="aTL-3h-8Q6"/>
-                        <outlet property="departureDateTextField" destination="1AX-CU-DEN" id="2gg-1D-jOe"/>
-                        <outlet property="departureTimeTextField" destination="281-jz-xNl" id="9HI-il-kkv"/>
+                        <outlet property="airlineButton" destination="ZQS-5k-IQX" id="Bau-79-oNE"/>
+                        <outlet property="airlineLabel" destination="X3d-RC-JOb" id="r6c-Ba-f6u"/>
+                        <outlet property="arrivalAirportButton" destination="gbO-hz-7Tx" id="NXF-cq-uUA"/>
+                        <outlet property="arrivalAirportLabel" destination="quE-9W-nXw" id="bYg-vY-fMZ"/>
+                        <outlet property="arrivalTimePicker" destination="dvG-Rx-5ME" id="R2d-bA-bnr"/>
+                        <outlet property="departureAirportButton" destination="IH5-fX-Jx1" id="K9w-NU-iDf"/>
+                        <outlet property="departureAirportLabel" destination="TDq-8k-JGv" id="ysv-Ai-WYb"/>
+                        <outlet property="departureTimePicker" destination="JSn-xi-vfb" id="lhA-83-pyz"/>
                         <outlet property="flightNumberTextField" destination="RyZ-5f-m0W" id="Qrz-qv-HTM"/>
                     </connections>
                 </viewController>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol NibLoadable {
+public protocol NibLoadable: class {
 
     static var bundle: Bundle { get }
     static var nibName: String { get }
@@ -35,15 +35,15 @@ extension NibLoadable {
 
         return loaded
     }
+    
+    public static var bundle: Bundle {
+        return Bundle(for: Self.self)
+    }
 }
 
 extension NibLoadable where Self: UITableViewCell {
 
     public static func register(in tableView: UITableView) {
         tableView.register(self.nib, forCellReuseIdentifier: self.identifier)
-    }
-    
-    public static var bundle: Bundle {
-        return Bundle(for: Self.self)
     }
 }

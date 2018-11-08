@@ -35,6 +35,10 @@
 		9B1121612192E7C000465AE2 /* AppIntentDonor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121602192E7C000465AE2 /* AppIntentDonor.swift */; };
 		9B1121632192F2A200465AE2 /* AppIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121622192F2A200465AE2 /* AppIntentHandler.swift */; };
 		9B1121652192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */; };
+		9B112167219310A400465AE2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B112166219310A400465AE2 /* CustomButton.swift */; };
+		9B112169219328C200465AE2 /* Date+BeforeAndAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */; };
+		9B11216F2193319A00465AE2 /* DateTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216E2193319A00465AE2 /* DateTimePickerView.swift */; };
+		9B112171219331AB00465AE2 /* DateTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B112170219331AB00465AE2 /* DateTimePickerView.xib */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
 		9B47B54421872FCF00140CA4 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B54021872FCF00140CA4 /* Bus.storyboard */; };
@@ -79,6 +83,7 @@
 		9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DE92187813E0046BE3F /* AirlineCell.swift */; };
 		9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DED21885F870046BE3F /* AirportSelectionDataSource.swift */; };
 		9B767DF021885F930046BE3F /* AirportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B767DEF21885F930046BE3F /* AirportCell.swift */; };
+		9B8778FA2193484900570847 /* NibBasedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8778F92193484900570847 /* NibBasedView.swift */; };
 		9BB566B42189DE5F00C1359F /* TripListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB566B32189DE5F00C1359F /* TripListDataSource.swift */; };
 		9BB566B62189DEDA00C1359F /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB566B52189DEDA00C1359F /* TripCell.swift */; };
 		9BB566B82189E0CB00C1359F /* TripDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB566B72189E0CB00C1359F /* TripDetailDataSource.swift */; };
@@ -196,6 +201,10 @@
 		9B1121602192E7C000465AE2 /* AppIntentDonor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentDonor.swift; sourceTree = "<group>"; };
 		9B1121622192F2A200465AE2 /* AppIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntentHandler.swift; sourceTree = "<group>"; };
 		9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+IntentAndResponseTranslations.swift"; sourceTree = "<group>"; };
+		9B112166219310A400465AE2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+BeforeAndAfter.swift"; sourceTree = "<group>"; };
+		9B11216E2193319A00465AE2 /* DateTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerView.swift; sourceTree = "<group>"; };
+		9B112170219331AB00465AE2 /* DateTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTimePickerView.xib; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B54121872FCF00140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Bus.storyboard; sourceTree = SOURCE_ROOT; };
@@ -232,6 +241,7 @@
 		9B767DE92187813E0046BE3F /* AirlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineCell.swift; sourceTree = "<group>"; };
 		9B767DED21885F870046BE3F /* AirportSelectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportSelectionDataSource.swift; sourceTree = "<group>"; };
 		9B767DEF21885F930046BE3F /* AirportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportCell.swift; sourceTree = "<group>"; };
+		9B8778F92193484900570847 /* NibBasedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibBasedView.swift; sourceTree = "<group>"; };
 		9BB566B32189DE5F00C1359F /* TripListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListDataSource.swift; sourceTree = "<group>"; };
 		9BB566B52189DEDA00C1359F /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		9BB566B72189E0CB00C1359F /* TripDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailDataSource.swift; sourceTree = "<group>"; };
@@ -366,6 +376,7 @@
 				9B11215C2192D1B100465AE2 /* NSPredicate+KeyPath.swift */,
 				33B255082146D67A00364AE1 /* UITableView+Generics.swift */,
 				9B47B5562187358700140CA4 /* UITextField+Validation.swift */,
+				9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,6 +577,10 @@
 			isa = PBXGroup;
 			children = (
 				9B767DEB218781460046BE3F /* Cells */,
+				9B112166219310A400465AE2 /* CustomButton.swift */,
+				9B11216E2193319A00465AE2 /* DateTimePickerView.swift */,
+				9B112170219331AB00465AE2 /* DateTimePickerView.xib */,
+				9B8778F92193484900570847 /* NibBasedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -711,6 +726,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B112171219331AB00465AE2 /* DateTimePickerView.xib in Resources */,
 				9B47B56B2187401F00140CA4 /* Generic.storyboard in Resources */,
 				9B6C1EF9214834B20006C217 /* airlines.csv in Resources */,
 				9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */,
@@ -778,6 +794,7 @@
 				9B47B54F218733CB00140CA4 /* AirlineSelectionViewController.swift in Sources */,
 				33B2549D21468AD700364AE1 /* TravelPlanner.xcdatamodeld in Sources */,
 				9BB566B42189DE5F00C1359F /* TripListDataSource.swift in Sources */,
+				9B11216F2193319A00465AE2 /* DateTimePickerView.swift in Sources */,
 				9B47B54C218733CB00140CA4 /* FlightEditViewController.swift in Sources */,
 				9B767DF021885F930046BE3F /* AirportCell.swift in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
@@ -795,6 +812,7 @@
 				9BB566B62189DEDA00C1359F /* TripCell.swift in Sources */,
 				9B6C1EFC2148619D0006C217 /* Airport+Extensions.swift in Sources */,
 				33B254CD2146A6B500364AE1 /* Trip+Extensions.swift in Sources */,
+				9B112167219310A400465AE2 /* CustomButton.swift in Sources */,
 				33B254A72146902D00364AE1 /* NSManagedObject+Convenience.swift in Sources */,
 				9BB566BE2189E28700C1359F /* TrainInfoCell.swift in Sources */,
 				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
@@ -803,12 +821,14 @@
 				9BB566BD2189E28700C1359F /* FlightInfoCell.swift in Sources */,
 				9B47B559218735F200140CA4 /* UITableView+Generics.swift in Sources */,
 				33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */,
+				9B112169219328C200465AE2 /* Date+BeforeAndAfter.swift in Sources */,
 				9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */,
 				9B47B5552187351400140CA4 /* Identifiable.swift in Sources */,
 				9BB566C52189EAF400C1359F /* NibLoadable.swift in Sources */,
 				9B6C1EF32148341A0006C217 /* AirlineImporter.swift in Sources */,
 				9B47B54E218733CB00140CA4 /* TrainEditViewController.swift in Sources */,
 				9B47B553218734E600140CA4 /* StoryboardHosted.swift in Sources */,
+				9B8778FA2193484900570847 /* NibBasedView.swift in Sources */,
 				9B47B54D218733CB00140CA4 /* HotelEditViewController.swift in Sources */,
 				9B6C1F0E21490EDF0006C217 /* AirportImporter.swift in Sources */,
 				9B47B54B218733CB00140CA4 /* BusEditViewController.swift in Sources */,

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateTimePickerView" customModule="SharedFramework" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5EC-he-HLp" customClass="DateTimePickerView" customModule="SharedFramework" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WVQ-oo-EVT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-Ca-k7Z">
+                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luQ-iY-Igm">
+                            <rect key="frame" x="195.5" y="0.0" width="179.5" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="mA2-MZ-kQh" firstAttribute="trailing" secondItem="WVQ-oo-EVT" secondAttribute="trailing" id="cSj-2o-Ow4"/>
+                <constraint firstAttribute="bottom" secondItem="WVQ-oo-EVT" secondAttribute="bottom" id="f4f-3G-FfF"/>
+                <constraint firstItem="WVQ-oo-EVT" firstAttribute="leading" secondItem="mA2-MZ-kQh" secondAttribute="leading" id="olr-Bf-D0y"/>
+                <constraint firstItem="WVQ-oo-EVT" firstAttribute="top" secondItem="5EC-he-HLp" secondAttribute="top" id="wd7-6i-5aj"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="mA2-MZ-kQh"/>
+            <connections>
+                <outlet property="dateTextField" destination="R9t-Ca-k7Z" id="Cen-bO-UJS"/>
+                <outlet property="timeTextField" destination="luQ-iY-Igm" id="TYQ-3v-AsE"/>
+            </connections>
+            <point key="canvasLocation" x="565.60000000000002" y="-699.85007496251876"/>
+        </view>
+    </objects>
+</document>

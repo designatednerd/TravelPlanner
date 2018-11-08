@@ -26,80 +26,90 @@ public class FlightEditViewController: UIViewController {
     
     public var mode: PlanViewMode = .edit {
         didSet {
+            self.configureMode(self.mode)
         }
     }
 
     @IBOutlet private var airlineButton: UIButton!
+    @IBOutlet private var airlineLabel: UILabel!
     @IBOutlet private var flightNumberTextField: UITextField!
-    @IBOutlet private var departureDateTextField: UITextField!
-    @IBOutlet private var departureTimeTextField: UITextField!
+    @IBOutlet private var departureTimePicker: DateTimePickerContainer!
     @IBOutlet private var departureAirportButton: UIButton!
-    @IBOutlet private var arrivalDateTextField: UITextField!
-    @IBOutlet private var arrivalTimeTextField: UITextField!
+    @IBOutlet private var departureAirportLabel: UILabel!
+    @IBOutlet private var arrivalTimePicker: DateTimePickerContainer!
     @IBOutlet private var arrivalAirportButton: UIButton!
+    @IBOutlet private var arrivalAirportLabel: UILabel!
     
-    private lazy var datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .date
-        picker.addTarget(self,
-                         action: #selector(pickerValueChanged(for:)),
-                         for: .valueChanged)
-        
-        return picker
-    }()
-    
-    private lazy var timePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .time
-        picker.addTarget(self,
-                         action: #selector(pickerValueChanged(for:)),
-                         for: .valueChanged)
-        
-        return picker
-    }()
-    
-    private var departureDate = Date() {
-        didSet {
-            let date = Formatters.shared.planDateFormatter.string(from: self.departureDate)
-            self.departureDateTextField.text = date
-            let time = Formatters.shared.planTimeFormatter.string(from: self.departureDate)
-            self.departureTimeTextField.text = time
-        }
+    private var buttons: [UIButton] {
+        return [
+            self.airlineButton,
+            self.departureAirportButton,
+            self.arrivalAirportButton,
+        ]
     }
-    private var arrivalDate = Date() {
-        didSet {
-            let date = Formatters.shared.planDateFormatter.string(from: self.arrivalDate)
-            self.arrivalDateTextField.text = date
-            let time = Formatters.shared.planTimeFormatter.string(from: self.arrivalDate)
-            self.arrivalTimeTextField.text = time
-        }
+    
+    private var textFields: [UITextField] {
+        return [
+            self.flightNumberTextField,
+            self.departureTimePicker.view.dateTextField,
+            self.departureTimePicker.view.timeTextField,
+            self.arrivalTimePicker.view.dateTextField,
+            self.arrivalTimePicker.view.timeTextField,
+        ]
+    }
+    
+    
+    private var labels: [UILabel] {
+        return [
+            self.airlineLabel,
+            self.departureAirportLabel,
+            self.arrivalAirportLabel,
+        ]
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Edit Flight"
+        
+        self.setupDatePlaceholders()
         self.configure(for: self.flight)
-        
-        self.departureDateTextField.inputView = self.datePicker
-        self.departureTimeTextField.inputView = self.timePicker
-        
-        self.arrivalDateTextField.inputView = self.datePicker
-        self.arrivalTimeTextField.inputView = self.timePicker
+        self.configureMode(self.mode)
     }
     
-    @objc private func pickerValueChanged(for datePicker: UIDatePicker) {
-        if datePicker === self.datePicker {
-            if self.departureDateTextField.isFirstResponder {
-                self.departureDate = datePicker.date
-            } else {
-                self.arrivalDate = datePicker.date
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.setupDatePlaceholders()
+    }
+    
+    private func setupDatePlaceholders() {
+        self.arrivalTimePicker.view.datePlaceholder = "Arrival Date"
+        self.arrivalTimePicker.view.timePlaceholder = "Arrival Time"
+        self.departureTimePicker.view.datePlaceholder = "Departure Date"
+        self.departureTimePicker.view.timePlaceholder = "Departure Time"
+    }
+    
+    func configureMode(_ mode: PlanViewMode) {
+        guard self.airlineButton != nil else {
+            // Not loaded yet
+            return
+        }
+        
+        switch mode {
+        case .edit:
+            self.title = "Edit Flight"
+            self.buttons.forEach { $0.isEnabled = true }
+            self.textFields.forEach { textField in
+                textField.isUserInteractionEnabled = true
+                textField.borderStyle = .roundedRect
             }
-        } else if datePicker === self.timePicker {
-            if self.departureTimeTextField.isFirstResponder {
-                self.departureDate = datePicker.date
-            } else {
-                self.arrivalDate = datePicker.date
+            self.labels.forEach { $0.isHidden = true }
+        case .view:
+            self.title = "Your Flight"
+            self.buttons.forEach { $0.isEnabled = false }
+            self.textFields.forEach { textField in
+                textField.isUserInteractionEnabled = false
+                textField.borderStyle = .none
             }
+            self.labels.forEach { $0.isHidden = false }
         }
     }
     
@@ -110,11 +120,11 @@ public class FlightEditViewController: UIViewController {
         self.flightNumberTextField.text = flight.flightNumber ?? ""
         
         if let departure = flight.startDate {
-            self.departureDate = departure
+            self.departureTimePicker.view.date = departure
         }
         
         if let arrival = flight.endDate {
-            self.arrivalDate = arrival
+            self.arrivalTimePicker.view.date =  arrival
         }
     }
     
@@ -128,10 +138,12 @@ public class FlightEditViewController: UIViewController {
     private func configureAirlineButton() {
         guard let airline = self.flight.airline else {
             self.airlineButton.setTitle("Select Airline", for: .normal)
+            self.airlineLabel.text = ""
             return
         }
         
         self.airlineButton.setTitle(airline.name!, for: .normal)
+        self.airlineLabel.text = airline.name!
     }
     
     @IBAction func selectArrivalAirport() {
@@ -144,10 +156,12 @@ public class FlightEditViewController: UIViewController {
     private func configureArrivalAirportButton() {
         guard let airport = self.flight.arrivalAirport else {
             self.arrivalAirportButton.setTitle("Select Arrival Airport", for: .normal)
+            self.arrivalAirportLabel.text = ""
             return
         }
         
         self.arrivalAirportButton.setTitle(airport.displayName, for: .normal)
+        self.arrivalAirportLabel.text = airport.displayName
     }
     
     @IBAction func selectDepartureAirport() {
@@ -160,10 +174,12 @@ public class FlightEditViewController: UIViewController {
     private func configureDepartureAirportButton() {
         guard let airport = self.flight.departureAirport else {
             self.departureAirportButton.setTitle("Select Departure Airport", for: .normal)
+            self.departureAirportLabel.text = ""
             return
         }
         
         self.departureAirportButton.setTitle(airport.displayName, for: .normal)
+        self.departureAirportLabel.text = airport.displayName
     }
 
     func validate() -> Bool {
@@ -172,7 +188,8 @@ public class FlightEditViewController: UIViewController {
             self.flight.departureAirport != nil,
             self.flight.departureAirport != nil,
             self.flightNumberTextField.dns_hasText,
-            self.flightNumberTextField.dns_containsOnlyNumbers else {
+            self.flightNumberTextField.dns_containsOnlyNumbers,
+            self.departureTimePicker.view.date.dns_isBefore(self.arrivalTimePicker.view.date) else {
                 return false
         }
 
@@ -187,39 +204,18 @@ extension FlightEditViewController: StoryboardHosted {
     }
 }
 
-extension FlightEditViewController: UITextFieldDelegate {
-    
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField === self.departureTimeTextField {
-            self.timePicker.date = self.departureDate
-        } else if textField === self.departureDateTextField {
-            self.datePicker.date = self.departureDate
-        } else if textField === self.arrivalTimeTextField {
-            self.timePicker.date = self.arrivalDate
-        } else if textField === self.arrivalDateTextField {
-            self.datePicker.date = self.arrivalDate
-        }
-        
-        return true
-    }
-}
-
 extension FlightEditViewController: PlanEditing {
     
     func savePressed() {
         guard self.validate() else { return }
         
         self.flight.flightNumber = self.flightNumberTextField.text
-        self.flight.startDate = self.departureDate
-        self.flight.endDate = self.arrivalDate
+        self.flight.startDate = self.departureTimePicker.view.date
+        self.flight.endDate = self.arrivalTimePicker.view.date
         
         do {
             try self.flight.managedObjectContext?.dns_saveIfHasChanges()
-            if let parent = self.parent {
-                parent.dismiss(animated: true, completion: nil)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
+            self.mode = .view
         } catch let error {
             print("Error saving: \(error)")
         }
