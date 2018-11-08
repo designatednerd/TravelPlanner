@@ -38,7 +38,7 @@ public class PlanEditCoordinator {
         embedded.coordinator = self
     }
     
-    private static func editControllerType(for item: Plan) -> EditPlanViewController.Type {
+    static func editControllerType(for item: Plan) -> EditPlanViewController.Type {
         if item is Bus {
             return BusEditViewController.self
         } else if item is Flight {

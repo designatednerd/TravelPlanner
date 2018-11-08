@@ -22,8 +22,8 @@ struct AppIntentDonor: IntentDonor {
         let arrivalIntent = ArrivalTimeIntent()
         arrivalIntent.origin = plan.originName
         arrivalIntent.destination = plan.destinationName
-        arrivalIntent.suggestedInvocationPhrase = "\(plan.destinationName) arrival"
-        let arrivalInteraction = INInteraction(intent: arrivalIntent, response: plan.toArrivalIntentResponse)
+        arrivalIntent.suggestedInvocationPhrase = "When do I get to \(plan.destinationName)?"
+        let arrivalInteraction = INInteraction(intent: arrivalIntent, response: nil)
         arrivalInteraction.donate { error in
             if let error = error {
                 debugPrint("Error donating arrival intent: \(error)")
@@ -33,8 +33,8 @@ struct AppIntentDonor: IntentDonor {
         let departureIntent = DepartureTimeIntent()
         departureIntent.origin = plan.originName
         departureIntent.destination = plan.destinationName
-        departureIntent.suggestedInvocationPhrase = "\(plan.destinationName) departure"
-        let departureInteraction = INInteraction(intent: departureIntent, response: plan.toDepartureIntentResponse)
+        departureIntent.suggestedInvocationPhrase = "When do I leave for \(plan.destinationName)?"
+        let departureInteraction = INInteraction(intent: departureIntent, response: nil)
         departureInteraction.donate { error in
             if let error = error {
                 debugPrint("Error donating departure intent: \(error)")

@@ -40,6 +40,11 @@
 		9B11216B21932D8700465AE2 /* Hotel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */; };
 		9B11216F2193319A00465AE2 /* DateTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216E2193319A00465AE2 /* DateTimePickerView.swift */; };
 		9B112171219331AB00465AE2 /* DateTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B112170219331AB00465AE2 /* DateTimePickerView.xib */; };
+		9B20EFF921947AE400D5E46E /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B20EFF821947AE400D5E46E /* IntentsUI.framework */; };
+		9B20EFFC21947AE400D5E46E /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20EFFB21947AE400D5E46E /* IntentViewController.swift */; };
+		9B20EFFF21947AE400D5E46E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B20EFFD21947AE400D5E46E /* MainInterface.storyboard */; };
+		9B20F00321947AE400D5E46E /* IntentUIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B20EFF721947AE400D5E46E /* IntentUIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9B20F00921947D4900D5E46E /* EmbeddedPlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00821947D4900D5E46E /* EmbeddedPlanCoordinator.swift */; };
 		9B20F00B21947F7D00D5E46E /* UIViewController+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
@@ -113,6 +118,13 @@
 			remoteGlobalIDString = 33B2548C21468A8100364AE1;
 			remoteInfo = SharedFramework;
 		};
+		9B20F00121947AE400D5E46E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33B2546B21468A1C00364AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B20EFF621947AE400D5E46E;
+			remoteInfo = IntentUIExtension;
+		};
 		9B588818214A6C9E00A27881 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33B2546B21468A1C00364AE1 /* Project object */;
@@ -147,6 +159,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				9B20F00321947AE400D5E46E /* IntentUIExtension.appex in Embed App Extensions */,
 				9B58881A214A6C9E00A27881 /* IntentsExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -208,6 +221,13 @@
 		9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hotel+Extensions.swift"; sourceTree = "<group>"; };
 		9B11216E2193319A00465AE2 /* DateTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerView.swift; sourceTree = "<group>"; };
 		9B112170219331AB00465AE2 /* DateTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTimePickerView.xib; sourceTree = "<group>"; };
+		9B20EFF721947AE400D5E46E /* IntentUIExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentUIExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B20EFF821947AE400D5E46E /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		9B20EFFB21947AE400D5E46E /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		9B20EFFE21947AE400D5E46E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9B20F00021947AE400D5E46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B20F00721947AEF00D5E46E /* IntentUIExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentUIExtension.entitlements; sourceTree = "<group>"; };
+		9B20F00821947D4900D5E46E /* EmbeddedPlanCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedPlanCoordinator.swift; sourceTree = "<group>"; };
 		9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
@@ -275,6 +295,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B20EFF421947AE400D5E46E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B20EFF921947AE400D5E46E /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9B588810214A6C9E00A27881 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +320,7 @@
 				33B2547521468A1C00364AE1 /* TravelPlanner */,
 				33B2548E21468A8100364AE1 /* SharedFramework */,
 				9B588814214A6C9E00A27881 /* IntentsExtension */,
+				9B20EFFA21947AE400D5E46E /* IntentUIExtension */,
 				33B2547421468A1C00364AE1 /* Products */,
 				9B5887FA2149C6D700A27881 /* Frameworks */,
 			);
@@ -303,6 +332,7 @@
 				33B2547321468A1C00364AE1 /* TravelPlanner.app */,
 				33B2548D21468A8100364AE1 /* SharedFramework.framework */,
 				9B588813214A6C9E00A27881 /* IntentsExtension.appex */,
+				9B20EFF721947AE400D5E46E /* IntentUIExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -448,6 +478,17 @@
 			path = PlanInfoCells;
 			sourceTree = "<group>";
 		};
+		9B20EFFA21947AE400D5E46E /* IntentUIExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9B20F00721947AEF00D5E46E /* IntentUIExtension.entitlements */,
+				9B20EFFB21947AE400D5E46E /* IntentViewController.swift */,
+				9B20EFFD21947AE400D5E46E /* MainInterface.storyboard */,
+				9B20F00021947AE400D5E46E /* Info.plist */,
+			);
+			path = IntentUIExtension;
+			sourceTree = "<group>";
+		};
 		9B47B53921872F5D00140CA4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +529,7 @@
 			children = (
 				9B6C1EFD21486D000006C217 /* FlightCoordinator.swift */,
 				9B47B56D218744AB00140CA4 /* PlanEditCoordinator.swift */,
+				9B20F00821947D4900D5E46E /* EmbeddedPlanCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -498,6 +540,7 @@
 				9B5887FF2149C6E700A27881 /* MobileCoreServices.framework */,
 				9B5887FD2149C6DD00A27881 /* CoreSpotlight.framework */,
 				9B5887FB2149C6D700A27881 /* Intents.framework */,
+				9B20EFF821947AE400D5E46E /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -620,6 +663,7 @@
 			dependencies = (
 				33B2549321468A8100364AE1 /* PBXTargetDependency */,
 				9B588819214A6C9E00A27881 /* PBXTargetDependency */,
+				9B20F00221947AE400D5E46E /* PBXTargetDependency */,
 			);
 			name = TravelPlanner;
 			productName = TravelPlanner;
@@ -643,6 +687,23 @@
 			productName = SharedFramework;
 			productReference = 33B2548D21468A8100364AE1 /* SharedFramework.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		9B20EFF621947AE400D5E46E /* IntentUIExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B20F00621947AE400D5E46E /* Build configuration list for PBXNativeTarget "IntentUIExtension" */;
+			buildPhases = (
+				9B20EFF321947AE400D5E46E /* Sources */,
+				9B20EFF421947AE400D5E46E /* Frameworks */,
+				9B20EFF521947AE400D5E46E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentUIExtension;
+			productName = IntentUIExtension;
+			productReference = 9B20EFF721947AE400D5E46E /* IntentUIExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		9B588812214A6C9E00A27881 /* IntentsExtension */ = {
 			isa = PBXNativeTarget;
@@ -668,7 +729,7 @@
 		33B2546B21468A1C00364AE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Designated Nerd Software";
 				TargetAttributes = {
@@ -686,6 +747,14 @@
 					33B2548C21468A8100364AE1 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+					};
+					9B20EFF621947AE400D5E46E = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					9B588812214A6C9E00A27881 = {
 						CreatedOnToolsVersion = 10.0;
@@ -713,6 +782,7 @@
 				33B2547221468A1C00364AE1 /* TravelPlanner */,
 				33B2548C21468A8100364AE1 /* SharedFramework */,
 				9B588812214A6C9E00A27881 /* IntentsExtension */,
+				9B20EFF621947AE400D5E46E /* IntentUIExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -745,6 +815,14 @@
 				9B6C1EFA214834B20006C217 /* airports.csv in Resources */,
 				9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */,
 				9BB566C9218A037600C1359F /* FlightInfoCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B20EFF521947AE400D5E46E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B20EFFF21947AE400D5E46E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +906,7 @@
 				9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */,
 				9BB566BD2189E28700C1359F /* FlightInfoCell.swift in Sources */,
 				9B47B559218735F200140CA4 /* UITableView+Generics.swift in Sources */,
+				9B20F00921947D4900D5E46E /* EmbeddedPlanCoordinator.swift in Sources */,
 				33B254E52146B1B600364AE1 /* FrameworkPersistentCoordinator.swift in Sources */,
 				9B112169219328C200465AE2 /* Date+BeforeAndAfter.swift in Sources */,
 				9B767DE321876B4E0046BE3F /* AirlineSelectionDataSource.swift in Sources */,
@@ -840,6 +919,14 @@
 				9B47B54D218733CB00140CA4 /* HotelEditViewController.swift in Sources */,
 				9B6C1F0E21490EDF0006C217 /* AirportImporter.swift in Sources */,
 				9B47B54B218733CB00140CA4 /* BusEditViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B20EFF321947AE400D5E46E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B20EFFC21947AE400D5E46E /* IntentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +945,11 @@
 			isa = PBXTargetDependency;
 			target = 33B2548C21468A8100364AE1 /* SharedFramework */;
 			targetProxy = 33B2549221468A8100364AE1 /* PBXContainerItemProxy */;
+		};
+		9B20F00221947AE400D5E46E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B20EFF621947AE400D5E46E /* IntentUIExtension */;
+			targetProxy = 9B20F00121947AE400D5E46E /* PBXContainerItemProxy */;
 		};
 		9B588819214A6C9E00A27881 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -886,6 +978,14 @@
 				33B2548021468A1E00364AE1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9B20EFFD21947AE400D5E46E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B20EFFE21947AE400D5E46E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		9B47B53A21872FB600140CA4 /* Hotel.storyboard */ = {
@@ -1146,6 +1246,48 @@
 			};
 			name = Release;
 		};
+		9B20F00421947AE400D5E46E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentUIExtension/IntentUIExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4U392EMNT3;
+				INFOPLIST_FILE = IntentUIExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.TravelPlanner.IntentUIExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B20F00521947AE400D5E46E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentUIExtension/IntentUIExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4U392EMNT3;
+				INFOPLIST_FILE = IntentUIExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.designatednerd.TravelPlanner.IntentUIExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9B58881C214A6C9E00A27881 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1212,6 +1354,15 @@
 			buildConfigurations = (
 				33B2549621468A8100364AE1 /* Debug */,
 				33B2549721468A8100364AE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B20F00621947AE400D5E46E /* Build configuration list for PBXNativeTarget "IntentUIExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B20F00421947AE400D5E46E /* Debug */,
+				9B20F00521947AE400D5E46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
