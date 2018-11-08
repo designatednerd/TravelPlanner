@@ -94,6 +94,6 @@ extension TripDetailViewController: UITableViewDelegate {
             return
         }
         
-        self.coordinator?.editPlan(plan)
+        self.coordinator?.viewPlan(plan)
     }
 }

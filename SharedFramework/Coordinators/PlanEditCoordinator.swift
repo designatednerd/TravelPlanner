@@ -25,14 +25,14 @@ public class PlanEditCoordinator {
     /// Designated initializer
     ///
     /// - Parameter plan: The plan to spin up a nav controller for
-    public init(plan: Plan, intentDonor: IntentDonor?) {
+    public init(plan: Plan, initialMode: PlanViewMode, intentDonor: IntentDonor?) {
         self.plan = plan
         let generic = GenericEditViewController.loadFromStoryboard()
         generic.intentDonor = intentDonor
         self.navController = UINavigationController(rootViewController: generic)
         
-        var embedded = PlanEditCoordinator.editControllerType(for: plan).loadFromStoryboard()
-        
+        let embedded = PlanEditCoordinator.editControllerType(for: plan).loadFromStoryboard()
+        embedded.mode = initialMode
         generic.embed(viewController: embedded)
         embedded.plan = plan
         embedded.coordinator = self

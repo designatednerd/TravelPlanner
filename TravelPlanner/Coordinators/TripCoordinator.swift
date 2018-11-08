@@ -49,6 +49,10 @@ class TripCoordinator {
     func editPlan<T: Plan>(_ plan: T) {
         self.showEditController(for: plan)
     }
+    
+    func viewPlan<T: Plan>(_ plan: T) {
+        self.showEditController(for: plan, mode: .view)
+    }
 
     // MARK: - Private navigation
 
@@ -60,8 +64,8 @@ class TripCoordinator {
         self.navController.pushViewController(tripVC, animated: true)
     }
 
-    private func showEditController<T: Plan>(for item: T) {
-        self.editCoordinator = PlanEditCoordinator(plan: item, intentDonor: self.intentDonor)
+    private func showEditController<T: Plan>(for item: T, mode: PlanViewMode = .edit) {
+        self.editCoordinator = PlanEditCoordinator(plan: item, initialMode: mode, intentDonor: self.intentDonor)
         self.navController.present(self.editCoordinator!.navController, animated: true)
     }
 

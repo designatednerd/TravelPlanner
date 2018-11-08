@@ -23,6 +23,11 @@ public class FlightEditViewController: UIViewController {
     
     var flightCoordinator: FlightCoordinator?
     public var flight: Flight!
+    
+    public var mode: PlanViewMode = .edit {
+        didSet {
+        }
+    }
 
     @IBOutlet private var airlineButton: UIButton!
     @IBOutlet private var flightNumberTextField: UITextField!

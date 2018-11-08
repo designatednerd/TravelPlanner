@@ -13,6 +13,17 @@ public class BusEditViewController: UIViewController {
     public weak var coordinator: PlanEditCoordinator?
     public var bus: Bus!
     
+    public var mode: PlanViewMode = .edit {
+        didSet {
+            switch self.mode {
+            case .edit:
+                break
+            case .view:
+                break
+            }
+        }
+    }
+    
     @IBAction private func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -29,6 +40,7 @@ extension BusEditViewController: PlanEditing {
     
     func savePressed() {
         debugPrint("Save bus!")
+        self.mode = .view
     }
     
     var plan: Plan {

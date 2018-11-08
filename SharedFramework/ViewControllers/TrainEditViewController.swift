@@ -13,6 +13,17 @@ public class TrainEditViewController: UIViewController {
     public weak var coordinator: PlanEditCoordinator?
     public var train: Train!
     
+    public var mode: PlanViewMode = .edit {
+        didSet {
+            switch self.mode {
+            case .edit:
+                break
+            case .view:
+                break
+            }
+        }
+    }
+    
     @IBAction private func cancel() {
         self.dismiss(animated: true, completion: nil)
     }

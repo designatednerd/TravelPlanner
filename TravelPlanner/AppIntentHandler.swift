@@ -40,7 +40,7 @@ struct AppIntentHandler {
             return false
         }
         
-        coordinator.editPlan(plan)
+        coordinator.viewPlan(plan)
         return true
     }
     
@@ -49,7 +49,7 @@ struct AppIntentHandler {
             return false
         }
         
-        coordinator.editPlan(plan)
+        coordinator.viewPlan(plan)
         return true
     }
 }

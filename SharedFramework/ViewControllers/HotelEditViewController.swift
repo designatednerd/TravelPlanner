@@ -15,6 +15,15 @@ public class HotelEditViewController: UIViewController {
 
     @IBAction private func cancel() {
         self.dismiss(animated: true, completion: nil)
+    
+    public var mode: PlanViewMode = .edit {
+        didSet {
+            self.configureForMode(self.mode)
+        }
+    }
+    
+    private func configureForMode(_ mode: PlanViewMode) {
+    }
     }
 }
 
