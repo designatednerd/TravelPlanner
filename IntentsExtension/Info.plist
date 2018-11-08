@@ -28,7 +28,8 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>EditTripIntent</string>
+				<string>ArrivalTimeIntent</string>
+				<string>DepartureTimeIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
