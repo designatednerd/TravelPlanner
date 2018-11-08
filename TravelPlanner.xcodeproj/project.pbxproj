@@ -37,6 +37,7 @@
 		9B1121652192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */; };
 		9B112167219310A400465AE2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B112166219310A400465AE2 /* CustomButton.swift */; };
 		9B112169219328C200465AE2 /* Date+BeforeAndAfter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */; };
+		9B11216B21932D8700465AE2 /* Hotel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */; };
 		9B11216F2193319A00465AE2 /* DateTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11216E2193319A00465AE2 /* DateTimePickerView.swift */; };
 		9B112171219331AB00465AE2 /* DateTimePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B112170219331AB00465AE2 /* DateTimePickerView.xib */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
@@ -203,6 +204,7 @@
 		9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plan+IntentAndResponseTranslations.swift"; sourceTree = "<group>"; };
 		9B112166219310A400465AE2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9B112168219328C200465AE2 /* Date+BeforeAndAfter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+BeforeAndAfter.swift"; sourceTree = "<group>"; };
+		9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Hotel+Extensions.swift"; sourceTree = "<group>"; };
 		9B11216E2193319A00465AE2 /* DateTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerView.swift; sourceTree = "<group>"; };
 		9B112170219331AB00465AE2 /* DateTimePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTimePickerView.xib; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
@@ -409,6 +411,7 @@
 				9B6C1F072148763B0006C217 /* Airline+Extensions.swift */,
 				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
 				33B255062146CF5500364AE1 /* Flight+Extensions.swift */,
+				9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */,
 				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
 				9B11215A2192C03F00465AE2 /* Plan+Extensions.swift */,
 				9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */,
@@ -798,6 +801,7 @@
 				9B47B54C218733CB00140CA4 /* FlightEditViewController.swift in Sources */,
 				9B767DF021885F930046BE3F /* AirportCell.swift in Sources */,
 				33B255072146CF5500364AE1 /* Flight+Extensions.swift in Sources */,
+				9B11216B21932D8700465AE2 /* Hotel+Extensions.swift in Sources */,
 				9B767DE1218768910046BE3F /* SearchableTableViewDataSource.swift in Sources */,
 				9B47B5512187347900140CA4 /* FlightCoordinator.swift in Sources */,
 				33B254B221469B8C00364AE1 /* Formatters.swift in Sources */,

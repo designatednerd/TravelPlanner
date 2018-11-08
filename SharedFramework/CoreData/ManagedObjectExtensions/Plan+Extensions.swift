@@ -24,7 +24,7 @@ extension Plan {
         let timeFormatter = DateFormatter()
         
         timeFormatter.dateStyle = .none
-        timeFormatter.timeStyle = .medium
+        timeFormatter.timeStyle = .short
         
         return timeFormatter
     }()
