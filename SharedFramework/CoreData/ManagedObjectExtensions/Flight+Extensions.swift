@@ -39,4 +39,30 @@ public extension Flight {
         
         return "✈️ \(hours)h \(minutes)m"
     }
+    
+    
+    public var clipboardFormattedString: String {
+        let departureDate: String
+        let arrivalTime: String
+        
+        if self.formattedStartDate == self.formattedEndDate {
+            departureDate = self.formattedStartDate
+            arrivalTime = self.formattedEndTime
+        } else {
+            departureDate = "\(self.formattedStartDate) - \(self.formattedEndDate)"
+            arrivalTime = "\(self.formattedEndTime) (\(self.formattedEndDate))"
+        }
+        
+        let departureAirport = self.departureAirport?.name ?? ""
+        let arrivalAirport = self.arrivalAirport?.name ?? ""
+        let airline = self.airline?.name ?? "(Unknown Carrier)"
+        let flightNumber = self.flightNumber ?? "(Unknown flight number)"
+        
+        return """
+        \(departureDate)
+        ✈️ \(airline) flight \(flightNumber)
+        Departs \(departureAirport) \(self.formattedStartTime)
+        Arrives \(arrivalAirport) \(arrivalTime)
+        """
+    }
 }

@@ -10,5 +10,7 @@ import Foundation
 
 public protocol IntentDonor {
     
-    func donateDepartureAndArrivalIntents(for: Plan?)
+    func donateDepartureAndArrivalIntents(for plan: Plan?)
+    
+    func donateClipboardIntent(for trip: Trip?)
 }

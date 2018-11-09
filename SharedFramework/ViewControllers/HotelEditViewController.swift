@@ -119,6 +119,10 @@ extension HotelEditViewController: StoryboardHosted {
 
 extension HotelEditViewController: PlanEditing {
     
+    var contentHeight: CGFloat {
+        return self.departureDatePicker.frame.maxY
+    }
+    
     func savePressed() {
         guard self.validate() else { return }
 

@@ -206,6 +206,11 @@ extension FlightEditViewController: StoryboardHosted {
 
 extension FlightEditViewController: PlanEditing {
     
+    var contentHeight: CGFloat {
+        let frame = self.view.convert(self.arrivalTimePicker.frame, from: self.arrivalTimePicker.superview)
+        return frame.maxY
+    }
+    
     func savePressed() {
         guard self.validate() else { return }
         

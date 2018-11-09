@@ -47,4 +47,12 @@ extension Hotel {
         
         return "🏨 \(days)d \(hours)h"
     }
+    
+    public var clipboardFormattedString: String {
+        return """
+        \(self.formattedArrivalDate) - \(self.formattedDepartureDate)
+        🏨 \(self.name ?? "(Unknown hotel)")
+        \(self.cityStateCountryText)
+        """
+    }
 }

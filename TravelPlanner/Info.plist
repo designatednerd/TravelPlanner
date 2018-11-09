@@ -24,6 +24,7 @@
 	<array>
 		<string>ArrivalTimeIntent</string>
 		<string>DepartureTimeIntent</string>
+		<string>TripDetailClipboardIntent</string>
 		<string>com.designatednerd.TravelPlanner.TripView</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

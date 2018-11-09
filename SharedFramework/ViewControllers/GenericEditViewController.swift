@@ -38,6 +38,8 @@ protocol PlanEditing: class {
     
     var mode: PlanViewMode { get set }
     
+    var contentHeight: CGFloat { get }
+    
     func editPressed()
     func closePressed()
     func savePressed()

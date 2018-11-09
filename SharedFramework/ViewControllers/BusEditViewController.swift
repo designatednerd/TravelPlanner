@@ -38,6 +38,10 @@ extension BusEditViewController: StoryboardHosted {
 
 extension BusEditViewController: PlanEditing {
     
+    var contentHeight: CGFloat {
+        return 0
+    }
+    
     func savePressed() {
         debugPrint("Save bus!")
         self.mode = .view

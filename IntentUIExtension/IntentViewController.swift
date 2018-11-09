@@ -48,12 +48,9 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
         let coordinator = EmbeddedPlanCoordinator(plan: retrievedPlan)
         coordinator.configureIn(viewController: self)
         
-        
-        completion(true, parameters, self.desiredSize)
+        let bottomCurveRadiusNobodyTellsYouAbout: CGFloat = 15
+        let size = CGSize(width: self.view.frame.width,
+                          height: coordinator.contentHeight + bottomCurveRadiusNobodyTellsYouAbout)
+        completion(true, parameters, size)
     }
-    
-    var desiredSize: CGSize {
-        return self.extensionContext!.hostedViewMaximumAllowedSize
-    }
-    
 }

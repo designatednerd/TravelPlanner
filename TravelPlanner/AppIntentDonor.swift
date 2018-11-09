@@ -22,7 +22,7 @@ struct AppIntentDonor: IntentDonor {
         let arrivalIntent = ArrivalTimeIntent()
         arrivalIntent.origin = plan.originName
         arrivalIntent.destination = plan.destinationName
-        arrivalIntent.suggestedInvocationPhrase = "When do I get to \(plan.destinationName)?"
+        arrivalIntent.suggestedInvocationPhrase = "\(plan.destinationName) arrival"
         let arrivalInteraction = INInteraction(intent: arrivalIntent, response: nil)
         arrivalInteraction.donate { error in
             if let error = error {
@@ -33,11 +33,27 @@ struct AppIntentDonor: IntentDonor {
         let departureIntent = DepartureTimeIntent()
         departureIntent.origin = plan.originName
         departureIntent.destination = plan.destinationName
-        departureIntent.suggestedInvocationPhrase = "When do I leave for \(plan.destinationName)?"
+        departureIntent.suggestedInvocationPhrase = "\(plan.destinationName) departrure"
         let departureInteraction = INInteraction(intent: departureIntent, response: nil)
         departureInteraction.donate { error in
             if let error = error {
                 debugPrint("Error donating departure intent: \(error)")
+            }
+        }
+    }
+    
+    func donateClipboardIntent(for trip: Trip?) {
+        guard let trip = trip else {
+            assertionFailure("No trip provided!")
+            return
+        }
+        
+        let intent = trip.toClipboardIntent        
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { error in
+            if let error = error {
+                debugPrint("Error donating clipboard intent: \(error)")
             }
         }
     }

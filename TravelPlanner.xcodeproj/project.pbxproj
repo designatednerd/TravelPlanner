@@ -46,6 +46,10 @@
 		9B20F00321947AE400D5E46E /* IntentUIExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B20EFF721947AE400D5E46E /* IntentUIExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B20F00921947D4900D5E46E /* EmbeddedPlanCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00821947D4900D5E46E /* EmbeddedPlanCoordinator.swift */; };
 		9B20F00B21947F7D00D5E46E /* UIViewController+Children.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */; };
+		9B20F00E219487B900D5E46E /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B2548D21468A8100364AE1 /* SharedFramework.framework */; };
+		9B20F0102194ADA400D5E46E /* TripDetailsClipboardIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F00F2194ADA400D5E46E /* TripDetailsClipboardIntentHandler.swift */; };
+		9B20F0122194AF7500D5E46E /* Trip+IntentAndResponseTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F0112194AF7500D5E46E /* Trip+IntentAndResponseTranslations.swift */; };
+		9B20F0142194B43000D5E46E /* Train+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B20F0132194B43000D5E46E /* Train+Extensions.swift */; };
 		9B47B53E21872FB600140CA4 /* Hotel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53A21872FB600140CA4 /* Hotel.storyboard */; };
 		9B47B53F21872FB600140CA4 /* Train.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B53C21872FB600140CA4 /* Train.storyboard */; };
 		9B47B54421872FCF00140CA4 /* Bus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B47B54021872FCF00140CA4 /* Bus.storyboard */; };
@@ -124,6 +128,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9B20EFF621947AE400D5E46E;
 			remoteInfo = IntentUIExtension;
+		};
+		9B20F00C219487A500D5E46E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33B2546B21468A1C00364AE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33B2548C21468A8100364AE1;
+			remoteInfo = SharedFramework;
 		};
 		9B588818214A6C9E00A27881 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -229,6 +240,9 @@
 		9B20F00721947AEF00D5E46E /* IntentUIExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentUIExtension.entitlements; sourceTree = "<group>"; };
 		9B20F00821947D4900D5E46E /* EmbeddedPlanCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedPlanCoordinator.swift; sourceTree = "<group>"; };
 		9B20F00A21947F7D00D5E46E /* UIViewController+Children.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Children.swift"; sourceTree = "<group>"; };
+		9B20F00F2194ADA400D5E46E /* TripDetailsClipboardIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsClipboardIntentHandler.swift; sourceTree = "<group>"; };
+		9B20F0112194AF7500D5E46E /* Trip+IntentAndResponseTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+IntentAndResponseTranslations.swift"; sourceTree = "<group>"; };
+		9B20F0132194B43000D5E46E /* Train+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Train+Extensions.swift"; sourceTree = "<group>"; };
 		9B47B53B21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Hotel.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B53D21872FB600140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Train.storyboard; sourceTree = SOURCE_ROOT; };
 		9B47B54121872FCF00140CA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SharedFramework/Base.lproj/Bus.storyboard; sourceTree = SOURCE_ROOT; };
@@ -299,6 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B20F00E219487B900D5E46E /* SharedFramework.framework in Frameworks */,
 				9B20EFF921947AE400D5E46E /* IntentsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,9 +460,11 @@
 				9B6C1EFB2148619D0006C217 /* Airport+Extensions.swift */,
 				33B255062146CF5500364AE1 /* Flight+Extensions.swift */,
 				9B11216A21932D8700465AE2 /* Hotel+Extensions.swift */,
+				9B20F0132194B43000D5E46E /* Train+Extensions.swift */,
 				33B254CC2146A6B500364AE1 /* Trip+Extensions.swift */,
 				9B11215A2192C03F00465AE2 /* Plan+Extensions.swift */,
 				9B1121642192FA7500465AE2 /* Plan+IntentAndResponseTranslations.swift */,
+				9B20F0112194AF7500D5E46E /* Trip+IntentAndResponseTranslations.swift */,
 			);
 			path = ManagedObjectExtensions;
 			sourceTree = "<group>";
@@ -552,6 +569,7 @@
 				9B1121562192BAE900465AE2 /* ArrivalTimeIntentHandler.swift */,
 				9B1121582192BAFD00465AE2 /* DepartureTimeIntentHandler.swift */,
 				9B11215E2192E76F00465AE2 /* IntentDonor.swift */,
+				9B20F00F2194ADA400D5E46E /* TripDetailsClipboardIntentHandler.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -699,6 +717,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9B20F00D219487A500D5E46E /* PBXTargetDependency */,
 			);
 			name = IntentUIExtension;
 			productName = IntentUIExtension;
@@ -863,6 +882,7 @@
 				9B58880B2149F82C00A27881 /* Intents.intentdefinition in Sources */,
 				9B1121592192BAFD00465AE2 /* DepartureTimeIntentHandler.swift in Sources */,
 				9B47B5572187358700140CA4 /* UITextField+Validation.swift in Sources */,
+				9B20F0142194B43000D5E46E /* Train+Extensions.swift in Sources */,
 				9B47B558218735E100140CA4 /* CaseIterable+TableViewHelping.swift in Sources */,
 				33B254A521468FCC00364AE1 /* NSManagedObjectContext+Convenience.swift in Sources */,
 				9B11215D2192D1B100465AE2 /* NSPredicate+KeyPath.swift in Sources */,
@@ -892,6 +912,7 @@
 				9BB566BC2189E28700C1359F /* HotelInfoCell.swift in Sources */,
 				9B767DEA2187813E0046BE3F /* AirlineCell.swift in Sources */,
 				9BB566BB2189E28700C1359F /* PlanInfoCell.swift in Sources */,
+				9B20F0122194AF7500D5E46E /* Trip+IntentAndResponseTranslations.swift in Sources */,
 				9B47B56621873FE300140CA4 /* GenericEditViewController.swift in Sources */,
 				9BB566C22189E2E500C1359F /* SectionedDataSource.swift in Sources */,
 				9BB566B62189DEDA00C1359F /* TripCell.swift in Sources */,
@@ -904,6 +925,7 @@
 				9B6C1F082148763B0006C217 /* Airline+Extensions.swift in Sources */,
 				9B11215F2192E76F00465AE2 /* IntentDonor.swift in Sources */,
 				9B767DEE21885F870046BE3F /* AirportSelectionDataSource.swift in Sources */,
+				9B20F0102194ADA400D5E46E /* TripDetailsClipboardIntentHandler.swift in Sources */,
 				9BB566BD2189E28700C1359F /* FlightInfoCell.swift in Sources */,
 				9B47B559218735F200140CA4 /* UITableView+Generics.swift in Sources */,
 				9B20F00921947D4900D5E46E /* EmbeddedPlanCoordinator.swift in Sources */,
@@ -950,6 +972,11 @@
 			isa = PBXTargetDependency;
 			target = 9B20EFF621947AE400D5E46E /* IntentUIExtension */;
 			targetProxy = 9B20F00121947AE400D5E46E /* PBXContainerItemProxy */;
+		};
+		9B20F00D219487A500D5E46E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33B2548C21468A8100364AE1 /* SharedFramework */;
+			targetProxy = 9B20F00C219487A500D5E46E /* PBXContainerItemProxy */;
 		};
 		9B588819214A6C9E00A27881 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

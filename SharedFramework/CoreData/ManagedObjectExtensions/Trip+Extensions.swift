@@ -64,4 +64,38 @@ public extension Trip {
 
         return plans.sorted { $0.startDate ?? Date.distantPast < $1.startDate ?? Date.distantFuture }
     }
+    
+    public var clipboardFormattedString: String {
+        let plans = self.plansByDate
+        guard !plans.isEmpty else {
+            return "No Plans Yet"
+        }
+
+        let planString = plans
+            .compactMap { plan -> String? in
+                if let flight = plan as? Flight {
+                    return flight.clipboardFormattedString
+                } else if let train = plan as? Train {
+                    return train.clipboardFormattedString
+                } else if let hotel = plan as? Hotel {
+                    return hotel.clipboardFormattedString
+                } else if let bus = plan as? Bus {
+                    return "🚌: \(bus.carrier ?? "TODO")"
+                } else {
+                    assertionFailure("Unhandled type!")
+                    return nil
+                }
+            }
+            .joined(separator: "\n\n")
+        
+        let name = self.name ?? "(Unnamed Trip)"
+        let destination = self.destination ?? "(Unknown Destination)"
+        
+        return """
+        Trip Name: \(name)
+        Destination: \(destination)
+        
+        \(planString)
+        """
+    }
 }

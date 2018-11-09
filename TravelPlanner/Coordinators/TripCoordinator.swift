@@ -60,6 +60,8 @@ class TripCoordinator {
         let tripVC = TripDetailViewController.loadFromStoryboard()
         tripVC.coordinator = self
         tripVC.trip = trip
+        
+        self.intentDonor?.donateClipboardIntent(for: trip)
 
         self.navController.pushViewController(tripVC, animated: true)
     }

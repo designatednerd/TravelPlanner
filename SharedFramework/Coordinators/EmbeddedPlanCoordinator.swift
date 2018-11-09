@@ -10,6 +10,7 @@ import Foundation
 
 public class EmbeddedPlanCoordinator {
     public let plan: Plan
+    public var contentHeight: CGFloat = 0
     
     public init(plan: Plan) {
         self.plan = plan
@@ -21,5 +22,8 @@ public class EmbeddedPlanCoordinator {
         vcToEmbed.mode = .view
         
         viewController.dns_addChild(vcToEmbed, in: viewController.view)
+        
+        vcToEmbed.view.layoutIfNeeded()
+        self.contentHeight = vcToEmbed.contentHeight
     }
 }

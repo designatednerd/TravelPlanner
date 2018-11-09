@@ -16,6 +16,8 @@ class IntentHandler: INExtension {
             return ArrivalTimeIntentHandler()
         } else if intent is DepartureTimeIntent {
             return DepartureTimeIntentHandler()
+        } else if intent is TripDetailClipboardIntent {
+            return TripDetailsClipboardIntentHandler()
         }
         
         return self

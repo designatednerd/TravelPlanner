@@ -38,6 +38,10 @@ extension TrainEditViewController: StoryboardHosted {
 
 extension TrainEditViewController: PlanEditing {
     
+    var contentHeight: CGFloat {
+        return 0
+    }
+    
     func savePressed() {
         debugPrint("Save train!")
     }
